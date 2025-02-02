@@ -4,19 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Form | Non Participants</title>
-  <link rel="stylesheet" href="form.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Registration Form | Participants & Volunteer</title>
+  <link rel="stylesheet" href="../assets/css/form.css">
 </head>
 
 <body>
   <div class="main-body">
-    <img id="logo" src="sources/logo.png" alt="Logo">
-    <form id="registration-form" action="registration.php" method="POST">
+    <img id="logo" src="../assets/img/logo.png" alt="Logo">
+    <form id="registration-form" action="" method="POST">
       <div class="note">
-        Note: Registration Form for non participants
+        Note: Registration Form for participants & volunteers
       </div>
       <div>
         <label for="name">Name <span>*</span> <span class="name-notice">(If participants enter project
@@ -36,6 +33,13 @@
         <div class="error number-length-error">Phone number should be 10 digit long</div>
       </div>
       <div>
+        <label for="registrtion_mode">Regsiter as <span>*</span></label>
+        <select name="registration_mode" id="registration-mode">
+          <option value="participants">Participants</option>
+          <option value="volunteer">Volunteer</option>
+        </select>
+      </div>
+      <div>
         <label for="organization">Which organization do you belong to? <span>*</span></label>
         <input type="text" name="organization" id="organization" placeholder="For eg: KIST" autocomplete="off"
           class="input">
@@ -46,7 +50,7 @@
       <div class=" field-note">Note: Field with * must be filled before submitted
       </div>
     </form>
-    <script src="form.js"></script>
+    <script src="../assets/js/form.js"></script>
   </div>
 </body>
 
