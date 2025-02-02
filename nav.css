@@ -1,0 +1,48 @@
+*{
+  padding: 0;
+  margin: 0;
+  background-color: rgb(20,20,20);
+  color: white;
+  font-family: sans-serif;
+}
+nav{
+  padding: 10px 0 5px 0;
+  border-bottom: 1px solid gray;
+  height: 40px;
+  display: flex;
+}
+nav ul{
+  flex: 1;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo{
+  padding-left: 20px;
+  font-size: 22px;
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+  cursor: pointer;
+}
+#inner-list{
+  padding: 0 30px 0 0;
+  display: flex;
+  column-gap: 70px;
+}
+#schedule, #map{
+  cursor: pointer;
+}
+.event-schedule #schedule{
+  text-decoration: underline;
+}
+.event-schedule #map{
+  text-decoration: none;
+}
+.event-map #schedule{
+  text-decoration: none;
+}
+.event-map #map{
+  text-decoration: underline;
+}
