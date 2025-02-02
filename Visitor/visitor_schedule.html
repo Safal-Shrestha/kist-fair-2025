@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome To KIST Fair</title>
   <link rel="stylesheet" href="../assets/css/nav.css">
+  <link rel="stylesheet" href="../assets/css/schedule.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -17,19 +21,169 @@
       <li id="logo">
         KIST FAIR 2025
       </li>
-      <i class="fa-solid fa-bars"></i>
-      <li>
-        <ul id="inner-list">
+      <li class="for-non-mobile">
+        <ul class="inner-list">
           <li>
-            <a href="/visitor_schedule.html" id="schedule">Schedule</a>
+            <a href="/Visitor/visitor_schedule.html" id="schedule-pc">Schedule</a>
           </li>
-          <li >
-            <a href="/visitor_map.html" id="map">Map</a>
+          <li>
+            <a href="/Visitor/visitor_map.html" id="map-pc">Map</a>
           </li>
         </ul>
       </li>
+      <li class="for-mobile">
+        <ul class="bar">
+            <i class="fa-solid fa-bars"></i>
+        </ul>
+        <div class="mobile">
+          <a href="/Visitor/visitor_schedule.html" class="schedule-mobile">Schedule</a>
+          <a href="/Visitor/visitor_map.html" class="map-mobile">Map</a>
+        </div>
+      </li>
     </ul>
   </nav>
+  <div id="body">
+    <div id="schedule-container">
+      <div id="schedule-container-title">
+        KIST FAIR 2025 SCHEDULE
+      </div>
+      <div id="schedule-container-body">
+        <div class="schedule">
+          <div class="schedule-title">
+            FAIR OPENING
+          </div>
+          <div class="schedule-time">
+            10:00 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            STALL OPENING
+          </div>
+          <div class="schedule-time">
+            11:00 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            DANCE COMPETITION
+          </div>
+          <div class="schedule-time">
+            12:00 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            JUDGE ARRIVAL
+          </div>
+          <div class="schedule-time">
+            1:00 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            DANCE COMPETITION 2
+          </div>
+          <div class="schedule-time">
+            1:30 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            EVENT XYZ
+          </div>
+          <div class="schedule-time">
+            2:00 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            EVENT XYZ
+          </div>
+          <div class="schedule-time">
+            2:30 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            EVENT XYZ
+          </div>
+          <div class="schedule-time">
+            3:00 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            EVENT XYZ
+          </div>
+          <div class="schedule-time">
+            3:30 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            EVENT XYZ
+          </div>
+          <div class="schedule-time">
+            4:00 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            EVENT XYZ
+          </div>
+          <div class="schedule-time">
+            4:30 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="schedule-title">
+            EVENT XYZ
+          </div>
+          <div class="schedule-time">
+            5:00 AM
+          </div>
+          <div class="schedule-description">
+            View Description
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/js/nav.js"></script>
 </body>
 
 </html>

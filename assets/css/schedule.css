@@ -1,0 +1,75 @@
+#body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --bg: rgb(50,50,50);
+  --button: rgb(58, 120, 255);
+}
+#schedule-container{
+  width: 733px;
+}
+#schedule-container-title{
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+#schedule-container-body{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 20px;
+}
+.schedule{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  padding: 10px 5px 10px 5px;
+  border-radius: 5px;
+  width: 337px;
+  height: 100px;
+  cursor: pointer;
+  position: relative;
+  background-color: var(--bg);
+}
+.schedule-title{
+  font-weight: bold;
+  background-color: var(--bg);
+}
+.schedule-title::before{
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--button);
+  margin-right: 4px;
+}
+.schedule-time{
+  padding: 2px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: var(--bg);
+}
+.schedule-time::before{
+  content: "Time";
+  font-size: 13px;
+}
+.schedule-description{
+  background-color: var(--bg);
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background-color: var(--button);
+  padding: 5px;
+  border-radius: 5px;
+}
+.schedule-description:hover{
+  background-color: blue;
+}
+@media (max-width: 760px){
+  #schedule-container{
+    width: 360px;
+  }
+}
