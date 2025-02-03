@@ -1,0 +1,84 @@
+/* Regular */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-Regular-BF65af35d81f2ff.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-Bold-BF65af35d84e111.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* SemiBold */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-Semibold-BF65af35d8354a8.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-Regular-BF65af35d81f2ff.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-Bold-Italic-BF65af35d85dafb.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* ExtraBold Italic */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-ExtraBold-Italic-BF65af35d8315f8.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-Medium-BF65af35d843ed6.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-Light-BF65af35d81e682.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* SemiBold Italic */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-SemiBold-Italic-BF65af35d6f02e9.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Variable Font (if applicable) */
+@font-face {
+  font-family: 'Neue Regrade';
+  src: url('../font/Neue-Regrade-Variable-BF65af35d87b6a7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  font-family: 'Neue Regrade';
+  font-weight: bold;
+}

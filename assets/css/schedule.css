@@ -1,0 +1,103 @@
+#body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  --bg: rgb(50,50,50);
+  --button: rgb(58, 120, 255);
+}
+#schedule-container, #finished-schedule-container{
+  width: 733px;
+}
+#finished-schedule-container{
+  margin-top: 50px;
+}
+#schedule-container-title, #finished-schedule-container-title{
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+#schedule-container-body, #finished-schedule-container-body{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 20px;
+}
+.schedule, .finished-schedule{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  padding: 10px 5px 10px 5px;
+  border-radius: 5px;
+  width: 337px;
+  height: 100px;
+  cursor: pointer;
+  position: relative;
+  background-color: var(--bg);
+}
+.finished-schedule{
+  border: 2px solid gray;
+}
+.schedule-title, .finished-schedule-title{
+  font-weight: bold;
+  background-color: var(--bg);
+}
+.finished-schedule-title{
+  font-weight: normal;
+  font-size: 13px;
+}
+.schedule-title-status, .finished-schedule-title-status{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.finished-schedule-title-status{
+  background-color: gray;
+  font-weight: normal;
+  font-size: 13px;
+}
+.schedule-time, .finished-schedule-time{
+  padding: 2px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: var(--bg);
+}
+.finished-schedule-time{
+  font-weight: normal;
+  font-size: 13px;
+}
+.schedule-time::before, .finished-schedule-time::before{
+  content: "Time";
+  font-size: 13px;
+  color: gray;
+}
+.schedule-status, .finished-schedule-status{
+  background-color: var(--bg);
+  position: absolute;
+  right: 10px;
+}
+.finished-schedule-status{
+  color: gray;
+}
+.schedule-description, .finished-schedule-description{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background-color: var(--button);
+  padding: 5px;
+  border-radius: 5px;
+}
+.finished-schedule-description{
+  background-color: gray;
+}
+.schedule-description:hover, .finished-schedule-description:hover{
+  background-color: blue;
+}
+@media (max-width: 760px){
+  #schedule-container, #finished-schedule-container{
+    width: 360px;
+  }
+}

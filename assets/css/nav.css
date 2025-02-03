@@ -3,7 +3,6 @@
   margin: 0;
   background-color: rgb(82, 82, 82);
   color: white;
-  font-family: sans-serif;
   --color: rgb(52, 52, 52);
 }
 nav{
@@ -30,27 +29,92 @@ nav ul{
   cursor: pointer;
   background-color: var(--color);
 }
-#inner-list{
+.inner-list{
   padding: 0 30px 0 0;
   display: flex;
   column-gap: 70px;
 }
-#inner-list li{
+.inner-list li{
   background-color: var(--color);
 }
-#schedule, #map{
+#schedule-pc, #map-pc{
   cursor: pointer;
   background-color: var(--color);
 }
-.event-schedule #schedule{
+.event-schedule #schedule-pc{
   text-decoration: underline;
 }
-.event-schedule #map{
+.event-schedule #map-pc{
   text-decoration: none;
 }
-.event-map #schedule{
+.event-map #schedule-pc{
   text-decoration: none;
 }
-.event-map #map{
+.event-map #map-pc{
   text-decoration: underline;
+}
+.for-non-mobile{
+  display: block;
+}
+.for-mobile{
+  display: none;
+  position: relative;
+}
+.bar{
+  margin-right: 10px;
+  font-size: 25px;
+}
+.bar i{
+  background-color: var(--color);
+}
+.mobile{
+  background-color: var(--color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  justify-content: center;
+  position: absolute;
+  width: 130px;
+  height: 100px;
+  left: -105px;
+  top: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px 0px 10px 0px;
+  z-index: 999;
+}
+.schedule-mobile{
+background-color: var(--color);
+}
+.map-mobile{
+  background-color: var(--color);
+}
+.event-schedule .schedule-mobile{
+  text-decoration: underline;
+}
+.event-schedule .map-mobile{
+  text-decoration: none;
+}
+.event-map .schedule-mobile{
+  text-decoration: none;
+}
+.event-map .map-mobile{
+  text-decoration: underline;
+}
+#schedule-mobile{
+  text-align: center;
+  width: 60px;
+}
+@media (max-width: 500px){
+  .for-non-mobile{
+    display: none;
+  }
+  .for-mobile{
+    display: block;
+    background-color: var(--color);
+  }
+  .mobile{
+    display: none;
+  }
 }
