@@ -93,7 +93,10 @@
 .finished-schedule-description{
   background-color: gray;
 }
-.schedule-description:hover, .finished-schedule-description:hover{
+.finished-schedule-description:hover{
+  background-color: rgb(90, 90, 90);
+}
+.schedule-description:hover{
   background-color: blue;
 }
 @media (max-width: 760px){
