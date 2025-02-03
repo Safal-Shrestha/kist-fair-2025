@@ -62,7 +62,7 @@
         KIST FAIR 2025 SCHEDULE
       </div>
       <div id="schedule-container-body">
-        <div class="schedule schedule1">
+        <!-- <div class="schedule schedule1">
           <div class="schedule-title">
             <div class="schedule-title-status"></div>
             FAIR OPENING
@@ -76,7 +76,7 @@
           <div class="schedule-description">
             View Description
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div id="finished-schedule-container">
@@ -84,7 +84,7 @@
         COMPLETED EVENTS
       </div>
       <div id="finished-schedule-container-body">
-        <div class="finished-schedule finished-schedule1">
+        <!-- <div class="finished-schedule finished-schedule1">
           <div class="finished-schedule-title">
             <div class="finished-schedule-title-status"></div>
             FAIR OPENING
@@ -98,7 +98,7 @@
           <div class="finished-schedule-description">
             View Description
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
