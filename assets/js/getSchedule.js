@@ -1,6 +1,11 @@
 let FetchedData;
-let fetchData = async () =>{
-  let fetch = await fetch('backend/fetch_itinerary.php');
-  let FetchedData = fetch.json();
-  console.log(FetchedData);
-}
+
+let fetchData = async () => {
+  let f = await fetch('backend/fetch_itinerary.php');
+  
+  FetchedData = await f.json(); 
+  
+  console.log(FetchedData); 
+};
+
+fetchData();
