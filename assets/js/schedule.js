@@ -41,3 +41,13 @@ setInterval(() => {
     }
   });
 }, 3000);
+
+//for viewing description
+let buttons = document.querySelectorAll('.schedule-description, .finished-schedule-description');
+buttons.forEach((button,index)=>{
+  button.addEventListener('click',()=>{
+    document.querySelector('.description-body').style.display = 'block';
+    document.querySelector('.description-body .description-body-title').innerText = 'Title of Event';
+    document.querySelector('.description-body .description-body-description').innerText = 'Descrption of Event';
+  });
+})

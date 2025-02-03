@@ -99,6 +99,16 @@
 .schedule-description:hover{
   background-color: blue;
 }
+.description-body{
+  position: absolute;
+  top: 150px;
+  left: calc(50vw - 200px);
+  width: 400px;
+  height: 300px;
+  border: 2px solid white;
+  border-radius: 5px;
+  z-index: 99;
+}
 @media (max-width: 760px){
   #schedule-container, #finished-schedule-container{
     width: 360px;
