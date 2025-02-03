@@ -16,7 +16,6 @@ function isAlphabet(str) {
 setInterval(() => {
   name = document.querySelector('#name').value;
   number = document.querySelector('#number').value;
-  console.log(number)
   if (!isAlphabet(name) && name !== '') {
     document.querySelector('.name-error').style.display = 'block';
   }
