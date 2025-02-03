@@ -44,10 +44,19 @@ setInterval(() => {
 
 //for viewing description
 let buttons = document.querySelectorAll('.schedule-description, .finished-schedule-description');
-buttons.forEach((button,index)=>{
-  button.addEventListener('click',()=>{
+buttons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    const scrollY = window.scrollY;
+    const centerY = scrollY + window.innerHeight / 5;
+    document.querySelector('.description-body').style.top = `${centerY}px`;
     document.querySelector('.description-body').style.display = 'block';
+    document.querySelector('#overlay').style.display = 'block';
     document.querySelector('.description-body .description-body-title').innerText = 'Title of Event';
     document.querySelector('.description-body .description-body-description').innerText = 'Descrption of Event';
   });
-})
+});
+
+document.querySelector('.description-body-cross-button').addEventListener('click', () => {
+  document.querySelector('.description-body').style.display = 'none';
+  document.querySelector('#overlay').style.display = 'none';
+});
