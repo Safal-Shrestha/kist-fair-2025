@@ -1,6 +1,5 @@
 <?php
 include 'connect.php';
-date_default_timezone_set('Asia/Kathmandu');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -25,8 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssss", $name, $email, $phone_no, $register_mode, $organization);
 
     if ($stmt->execute()) {
-        header("location: ../Visitor/visitor_schedule.html");
-        // echo "Registration successful!";
+        if($register_mode=="visitor")
+        {
+            header("location:../index.php");
+        }
+        else
+        {
+            session_start();
+            $_SESSION['name'] = $name;
+            $_SESSION['id'] = session_create_id();
+            header("location:../index.php");
+        }
     } else {
         echo "Error: " . $stmt->error;
     }
