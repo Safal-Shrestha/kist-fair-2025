@@ -104,6 +104,7 @@
   </div>
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/schedule.js"></script>
+  <script src="assets/js/getSchedule.js"></script>
 </body>
 <script>
     function logout()
