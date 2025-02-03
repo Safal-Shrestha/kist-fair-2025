@@ -14,10 +14,11 @@
 <body>
   <div class="main-body">
     <img id="logo" src="../assets/img/logo.png" alt="Logo">
-    <form id="registration-form" action="/backend/registration.php" method="POST">
+    <form id="registration-form" action="../backend/registration.php" method="POST">
       <div class="note">
         Note: Registration Form for non participants
       </div>
+      <input name="note" hidden value="visitor">
       <div>
         <label for="name">Name <span>*</span> <span class="name-notice">(If participants enter project
             name)</span></label>

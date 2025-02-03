@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $organization = $_POST["organization"];
     $phone_no = $_POST["number"];
 
-    if (isset($_POST['note']) && $_POST['note'] == 'Note: Registration Form for non participants') {
+    if (isset($_POST['note']) && $_POST['note'] == 'visitor') {
         $register_mode = "visitor";
     } else {
         if (isset($_POST['registration_mode']) && ($_POST['registration_mode'] == 'participants' || $_POST['registration_mode'] == 'volunteer')) {
@@ -17,14 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    $time = date("h:i:sa");
-
-    $register_query = "INSERT INTO registration (created_at,name,email,phone,registration_mode,organization)
-    VALUES (?, ?, ?, ?, ?, ?)";
+    $register_query = "INSERT INTO registration (name,email,phone,registration_mode,organization)
+    VALUES (?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($register_query);
 
-    $stmt->bind_param("ssssss", $time, $name, $email, $phone_no, $register_mode, $organization);
+    $stmt->bind_param("sssss", $name, $email, $phone_no, $register_mode, $organization);
 
     if ($stmt->execute()) {
         header("location: ../Visitor/visitor_schedule.html");
