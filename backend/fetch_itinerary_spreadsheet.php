@@ -5,7 +5,7 @@ require '../vendor/autoload.php';
 use Google\Client;
 use Google\Service\Sheets;
 
-if($_SESSION['REQUEST_METHOD'] == 'POST')
+if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $client = new Client();
     $client->setAuthConfig('../api-keys/kist-fest-2025-itinerary.json');
@@ -45,5 +45,5 @@ if($_SESSION['REQUEST_METHOD'] == 'POST')
 
 else
 {
-    echo json_encode(['failue' => $_SESSION['REQUEST_METHOD']]);
+    echo json_encode(['failure' => $_SESSION['REQUEST_METHOD']]);
 }
