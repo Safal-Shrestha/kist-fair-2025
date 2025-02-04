@@ -20,8 +20,11 @@ let fetchData = async () => {
           let div3 = document.createElement('div');
           div3.classList.add('finished-schedule-title-status');
           div2.appendChild(div3);
+          let div4 = document.createElement('div');
+          div4.classList.add('schedule-title-content');
+          div4.innerText = data.name;
+          div2.appendChild(div4);
         }
-        div2.innerText = data.name;
         div1.appendChild(div2);
       }
 
@@ -64,8 +67,11 @@ let fetchData = async () => {
           let div3 = document.createElement('div');
           div3.classList.add('schedule-title-status');
           div2.appendChild(div3);
+          let div4 = document.createElement('div');
+          div4.classList.add('schedule-title-content');
+          div4.innerText = data.name;
+          div2.appendChild(div4);
         }
-        div2.innerText = data.name;
         div1.appendChild(div2);
       }
 
