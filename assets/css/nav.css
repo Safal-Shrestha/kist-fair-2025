@@ -21,6 +21,7 @@ nav ul{
   background-color: var(--color);
 }
 #logo{
+  pointer-events: none;
   padding-left: 20px;
   font-size: 22px;
   font-family: "Pacifico", serif;
