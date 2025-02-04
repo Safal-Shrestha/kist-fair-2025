@@ -10,12 +10,13 @@
   flex-direction: column;
   align-items: center;
 }
-#logo{
+#logo-form{
   width: 100px;
   border-radius: 50%;
 }
 .note{
   color: rgb(2, 198, 2);
+  text-align: center;
 }
 #registration-form{
   border: 2px solid rgb(74, 74, 74);
@@ -85,11 +86,21 @@
 #submit:hover{
   background-color: rgb(25, 25, 206);
 }
+#description{
+  width: 380px;
+  height: 100px;
+  resize: none;
+  font-size: 15px;
+  padding: 0px 5px;
+}
 @media (max-width: 400px){
   #registration-form{
     width: 340px;
   }
   .input{
+    width: 320px;
+  }
+  #description{
     width: 320px;
   }
 }

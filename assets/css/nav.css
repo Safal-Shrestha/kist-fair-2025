@@ -107,6 +107,19 @@ background-color: var(--color);
   text-align: center;
   width: 60px;
 }
+.participant-support #map-pc{
+  text-decoration: none;
+}
+.participant-support #schedule-pc{
+  text-decoration: none;
+}
+#support-pc{
+  text-decoration: none;
+}
+.participant-support #support-pc{
+  background-color: var(--color);
+  text-decoration: underline;
+}
 @media (max-width: 500px){
   .for-non-mobile{
     display: none;
