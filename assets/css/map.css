@@ -119,6 +119,29 @@
   font-weight: bold;
   font-size: 20px;
 }
+.switch-main-building-container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.switch-main-building{
+  display: flex;
+  column-gap: 50px;
+  height: 50px;
+  align-items: center;
+}
+.switch-main-building a{
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.f .switch-main-building .first-floor{
+  background-color: rgb(130, 130, 130);
+}
+.u .switch-main-building .underground-floor{
+  background-color: rgb(130, 130, 130);
+}
 @media (max-width: 640px){
   .map-title{
     font-size: 20px;
