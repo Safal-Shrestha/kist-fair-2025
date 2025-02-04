@@ -38,10 +38,10 @@
       <li class="for-non-mobile">
         <ul class="inner-list">
           <li>
-            <a href="/index.html" id="schedule-pc">Schedule</a>
+            <a href="index.php" id="schedule-pc">Schedule</a>
           </li>
           <li>
-            <a href="/map.html" id="map-pc">Map</a>
+            <a href="map.html" id="map-pc">Map</a>
           </li>
         </ul>
       </li>
@@ -50,8 +50,8 @@
           <i class="fa-solid fa-bars"></i>
         </ul>
         <div class="mobile">
-          <a href="/index.html" class="schedule-mobile">Schedule</a>
-          <a href="/map.html" class="map-mobile">Map</a>
+          <a href="index.php" class="schedule-mobile">Schedule</a>
+          <a href="map.html" class="map-mobile">Map</a>
         </div>
       </li>
     </ul>
