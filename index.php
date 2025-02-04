@@ -102,8 +102,16 @@
       </div>
     </div>
   </div>
+  <div class="description-body">
+    <div class="description-body-title">
+    </div>
+    <div class="description-body-description">
+    </div>
+    <i class="fa-solid fa-xmark description-body-cross-button"></i>
+    <div class="description-body-time">00:00</div>
+  </div>
+  <div id="overlay"></div>
   <script src="assets/js/nav.js"></script>
-  <script src="assets/js/schedule.js"></script>
   <script src="assets/js/getSchedule.js"></script>
 </body>
 <script>
