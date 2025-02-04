@@ -5,7 +5,6 @@ let fetchData = async () => {
   FetchedData = await f.json();
 
   let ongoingCount = 0, completedCount = 0;
-  console.log(FetchedData);
   
   FetchedData.forEach((data, index) => {
     if (data.status === 'completed') {
@@ -32,7 +31,7 @@ let fetchData = async () => {
         let div2 = document.createElement('div');
         div2.classList.add('finished-schedule-time');
         let hour = data.time.slice(0, 2);
-        let min = data.time.slice(3, 2);
+        let min = data.time.slice(3, 5);
         div2.innerText = hour + ':' + min;
         div1.appendChild(div2);
       }
@@ -79,7 +78,7 @@ let fetchData = async () => {
         let div2 = document.createElement('div');
         div2.classList.add('schedule-time');
         let hour = data.time.slice(0, 2);
-        let min = data.time.slice(3, 2);
+        let min = data.time.slice(3, 5);
         div2.innerText = hour + ':' + min;
         div1.appendChild(div2);
       }
@@ -102,6 +101,11 @@ let fetchData = async () => {
       
       document.querySelector('#schedule-container-body').appendChild(div1);
     }
+
+    let description = document.querySelectorAll('.schedule-description, .finished-schedule-description');
+    description.forEach((d,i)=>{
+  
+    });
   });
   
 };
