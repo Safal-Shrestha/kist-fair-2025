@@ -51,6 +51,50 @@ let fetchData = async () => {
       
       document.querySelector('#finished-schedule-container-body').appendChild(div1);
     }
+    else if(data.status === 'ongoing' || data.status === 'upcoming'){
+      ongoingCount++;
+      let div1 = document.createElement('div');
+      div1.classList.add(`schedule`, `schedule${completedCount}`);
+      
+      {//for title
+        let div2 = document.createElement('div');
+        div2.classList.add('schedule-title');
+        {
+          let div3 = document.createElement('div');
+          div3.classList.add('schedule-title-status');
+          div2.appendChild(div3);
+        }
+        div2.innerText = data.name;
+        div1.appendChild(div2);
+      }
+
+      {//for time
+        let div2 = document.createElement('div');
+        div2.classList.add('schedule-time');
+        let hour = data.time.slice(0, 2);
+        let min = data.time.slice(3, 2);
+        div2.innerText = hour + ':' + min;
+        div1.appendChild(div2);
+      }
+
+      {//for status
+        let div2 = document.createElement('div');
+        div2.classList.add('schedule-status');
+        let first = data.status.slice(0, 1).toUpperCase();
+        let text = first + data.status.slice(1);
+        div2.innerText = text;
+        div1.appendChild(div2);
+      }
+
+      {//description button
+        let div2 = document.createElement('div');
+        div2.classList.add('schedule-description');
+        div2.innerText = 'View Description';
+        div1.appendChild(div2);
+      }
+      
+      document.querySelector('#schedule-container-body').appendChild(div1);
+    }
   });
 };
 
