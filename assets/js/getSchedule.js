@@ -5,6 +5,7 @@ let fetchData = async () => {
   FetchedData = await f.json();
 
   let ongoingCount = 0, completedCount = 0;
+  console.log(FetchedData);
   
   FetchedData.forEach((data, index) => {
     if (data.status === 'completed') {
@@ -54,7 +55,7 @@ let fetchData = async () => {
     else if(data.status === 'ongoing' || data.status === 'upcoming'){
       ongoingCount++;
       let div1 = document.createElement('div');
-      div1.classList.add(`schedule`, `schedule${completedCount}`);
+      div1.classList.add(`schedule`, `schedule${ongoingCount}`);
       
       {//for title
         let div2 = document.createElement('div');
@@ -96,6 +97,39 @@ let fetchData = async () => {
       document.querySelector('#schedule-container-body').appendChild(div1);
     }
   });
+  
 };
 
-fetchData();
+fetchData().then(() => {
+  let status = document.querySelectorAll('.schedule-status');
+  status.forEach((s, i) => {
+    let scheduleElement = document.querySelector(`.schedule${i + 1}`);
+    if (scheduleElement) {
+      if (s.innerText.toUpperCase() === 'COMPLETED') {
+        scheduleElement.style.display = 'none';
+      }
+      else if (s.innerText.toUpperCase() === 'ONGOING') {
+        scheduleElement.style.border = '2px solid #17f514';
+        s.style.color = '#17f514';
+        let titleStatus = scheduleElement.querySelector('.schedule-title-status');
+        let description = scheduleElement.querySelector('.schedule-description');
+        if (titleStatus) titleStatus.style.backgroundColor = '#17f514';
+        if (description) {
+          description.style.backgroundColor = '#17f514';
+          description.addEventListener('mouseenter', () => {
+            description.style.backgroundColor = '#0e9c0c';
+          });
+          description.addEventListener('mouseleave', () => {
+            description.style.backgroundColor = '#17f514';
+          });
+        }
+      }
+      else if (s.innerText.toUpperCase() === 'UPCOMING') {
+        scheduleElement.style.border = '2px solid rgb(58, 120, 255)';
+        s.style.color = 'rgb(58, 120, 255)';
+        let titleStatus = scheduleElement.querySelector('.schedule-title-status');
+        if (titleStatus) titleStatus.style.backgroundColor = 'rgb(58, 120, 255)';
+      }
+    }
+  });
+}).catch(console.error);;
