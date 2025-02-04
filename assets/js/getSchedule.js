@@ -1,6 +1,6 @@
-let FetchedData, oldFetchedData = [], time;
+let FetchedData, oldFetchedData = [];
 
-const hasChange = (oldFetchedData,FetchedData) =>{
+const hasChange = (oldFetchedData, FetchedData) => {
   if (oldFetchedData.length !== FetchedData.length) return true;
 
   for (let i = 0; i < oldFetchedData.length; i++) {
@@ -16,13 +16,13 @@ let fetchData = async () => {
   FetchedData = await f.json();
 
   let ongoingCount = 0, completedCount = 0;
-  if(hasChange(oldFetchedData,FetchedData)){
+  if (hasChange(oldFetchedData, FetchedData)) {
     FetchedData.forEach((data, index) => {
       if (data.status === 'completed') {
         completedCount++;
         let div1 = document.createElement('div');
         div1.classList.add(`finished-schedule`, `finished-schedule${completedCount}`);
-  
+
         {//for title
           let div2 = document.createElement('div');
           div2.classList.add('finished-schedule-title');
@@ -37,7 +37,7 @@ let fetchData = async () => {
           }
           div1.appendChild(div2);
         }
-  
+
         {//for time
           let div2 = document.createElement('div');
           div2.classList.add('finished-schedule-time');
@@ -59,7 +59,7 @@ let fetchData = async () => {
           time = hour + ':' + min + ' ' + format;
           div1.appendChild(div2);
         }
-  
+
         {//for status
           let div2 = document.createElement('div');
           div2.classList.add('finished-schedule-status');
@@ -68,7 +68,7 @@ let fetchData = async () => {
           div2.innerText = text;
           div1.appendChild(div2);
         }
-  
+
         {//description button
           let div2 = document.createElement('div');
           div2.classList.add('finished-schedule-description');
@@ -81,6 +81,20 @@ let fetchData = async () => {
             document.querySelector('#overlay').style.display = 'block';
             document.querySelector('.description-body-title').innerText = data.name;
             document.querySelector('.description-body-description').innerText = data.description;
+            let hour = data.time.slice(0, 2);
+            let min = data.time.slice(3, 5);
+            let format;
+            if (hour > 12) {
+              hour = hour % 12;
+              format = 'P:M';
+            }
+            else if (hour == 12) {
+              format = 'P:M';
+            }
+            else {
+              format = 'A:M';
+            }
+            let time = hour + ':' + min + ' ' + format;
             document.querySelector('.description-body-time').innerText = time;
           });
           document.querySelector('.description-body-cross-button').addEventListener('click', () => {
@@ -89,14 +103,14 @@ let fetchData = async () => {
           });
           div1.appendChild(div2);
         }
-  
+
         document.querySelector('#finished-schedule-container-body').appendChild(div1);
       }
       else if (data.status === 'ongoing' || data.status === 'upcoming') {
         ongoingCount++;
         let div1 = document.createElement('div');
         div1.classList.add(`schedule`, `schedule${ongoingCount}`);
-  
+
         {//for title
           let div2 = document.createElement('div');
           div2.classList.add('schedule-title');
@@ -111,7 +125,7 @@ let fetchData = async () => {
           }
           div1.appendChild(div2);
         }
-  
+
         {//for time
           let div2 = document.createElement('div');
           div2.classList.add('schedule-time');
@@ -129,10 +143,9 @@ let fetchData = async () => {
             format = 'A:M';
           }
           div2.innerText = hour + ':' + min + ' ' + format;
-          time = hour + ':' + min + ' ' + format;
           div1.appendChild(div2);
         }
-  
+
         {//for status
           let div2 = document.createElement('div');
           div2.classList.add('schedule-status');
@@ -141,7 +154,7 @@ let fetchData = async () => {
           div2.innerText = text;
           div1.appendChild(div2);
         }
-  
+
         {//description button
           let div2 = document.createElement('div');
           div2.classList.add('schedule-description');
@@ -154,6 +167,20 @@ let fetchData = async () => {
             document.querySelector('#overlay').style.display = 'block';
             document.querySelector('.description-body-title').innerText = data.name;
             document.querySelector('.description-body-description').innerText = data.description;
+            let hour = data.time.slice(0, 2);
+            let min = data.time.slice(3, 5);
+            let format;
+            if (hour > 12) {
+              hour = hour % 12;
+              format = 'P:M';
+            }
+            else if (hour == 12) {
+              format = 'P:M';
+            }
+            else {
+              format = 'A:M';
+            }
+            let time = hour + ':' + min + ' ' + format;
             document.querySelector('.description-body-time').innerText = time;
           });
           document.querySelector('.description-body-cross-button').addEventListener('click', () => {
@@ -162,10 +189,10 @@ let fetchData = async () => {
           });
           div1.appendChild(div2);
         }
-  
+
         document.querySelector('#schedule-container-body').appendChild(div1);
       }
-  
+
       //for checking status of the schedule
       let status = document.querySelectorAll('.schedule-status');
       status.forEach((s, i) => {
@@ -199,10 +226,10 @@ let fetchData = async () => {
         }
       });
     });
-  } 
+  }
   oldFetchedData = FetchedData;
 };
 
 fetchData();
 
-setInterval(fetchData,1000);
+setInterval(fetchData, 1000);
