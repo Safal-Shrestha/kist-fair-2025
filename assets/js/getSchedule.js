@@ -1,4 +1,4 @@
-let FetchedData;
+let FetchedData, time;
 
 let fetchData = async () => {
   let f = await fetch('backend/fetch_itinerary.php');
@@ -33,6 +33,7 @@ let fetchData = async () => {
         let hour = data.time.slice(0, 2);
         let min = data.time.slice(3, 5);
         div2.innerText = hour + ':' + min;
+        time = hour + ':' + min;
         div1.appendChild(div2);
       }
 
@@ -49,6 +50,15 @@ let fetchData = async () => {
         let div2 = document.createElement('div');
         div2.classList.add('finished-schedule-description');
         div2.innerText = 'View Description';
+        div2.addEventListener('click',()=>{
+          document.querySelector('.description-body').style.display = 'block';
+          document.querySelector('.description-body-cross-button').addEventListener('click',()=>{
+            document.querySelector('.description-body').style.display = 'none';
+          });
+          document.querySelector('.description-body-title').innerText = data.name;
+          document.querySelector('.description-body-description').innerText = data.description;
+          document.querySelector('.description-body-time').innerText = time;
+        });
         div1.appendChild(div2);
       }
       
@@ -80,6 +90,7 @@ let fetchData = async () => {
         let hour = data.time.slice(0, 2);
         let min = data.time.slice(3, 5);
         div2.innerText = hour + ':' + min;
+        time = hour + ':' + min;
         div1.appendChild(div2);
       }
 
@@ -96,16 +107,20 @@ let fetchData = async () => {
         let div2 = document.createElement('div');
         div2.classList.add('schedule-description');
         div2.innerText = 'View Description';
+        div2.addEventListener('click',()=>{
+          document.querySelector('.description-body').style.display = 'block';
+          document.querySelector('.description-body-cross-button').addEventListener('click',()=>{
+            document.querySelector('.description-body').style.display = 'none';
+          });
+          document.querySelector('.description-body-title').innerText = data.name;
+          document.querySelector('.description-body-description').innerText = data.description;
+          document.querySelector('.description-body-time').innerText = time;
+        });
         div1.appendChild(div2);
       }
       
       document.querySelector('#schedule-container-body').appendChild(div1);
     }
-
-    let description = document.querySelectorAll('.schedule-description, .finished-schedule-description');
-    description.forEach((d,i)=>{
-  
-    });
   });
   
 };
@@ -142,4 +157,9 @@ fetchData().then(() => {
       }
     }
   });
+
+  let description = document.querySelectorAll('.schedule-description, .finished-schedule-description');
+    description.forEach((d,i)=>{
+      
+    });
 }).catch(console.error);;
