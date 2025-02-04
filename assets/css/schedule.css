@@ -163,8 +163,8 @@
 }
 @media (max-width: 530px){
   .description-body{
-    left: calc(50vw - 180px);
-    width: 360px;
+    left: calc(50vw - 183px);
+    width: 350px;
     height: 400px;
   }
   .description-body-title{
