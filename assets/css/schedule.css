@@ -42,10 +42,15 @@
 .schedule-title, .finished-schedule-title{
   font-weight: bold;
   background-color: var(--bg);
+  display: flex;
+  align-items: center;
 }
 .finished-schedule-title{
   font-weight: normal;
   font-size: 13px;
+}
+.schedule-title-content, .finished-schedule-title-content{
+  background-color: var(--bg);
 }
 .schedule-title-status, .finished-schedule-title-status{
   display: inline-block;
