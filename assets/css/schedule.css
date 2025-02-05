@@ -5,26 +5,26 @@
   --bg: rgb(50,50,50);
   --button: rgb(58, 120, 255);
 }
-#schedule-container, #finished-schedule-container{
+#schedule-container, #finished-schedule-container, #problem-container, #finished-problem-container{
   width: 733px;
 }
-#finished-schedule-container{
+#finished-schedule-container, #finished-problem-container{
   margin-top: 50px;
 }
-#schedule-container-title, #finished-schedule-container-title{
+#schedule-container-title, #finished-schedule-container-title, #problem-container-title, #finished-problem-container-title{
   margin-top: 30px;
   font-size: 25px;
   font-weight: bold;
   text-align: center;
 }
-#schedule-container-body, #finished-schedule-container-body{
+#schedule-container-body, #finished-schedule-container-body, #problem-container-body, #finished-problem-container-body{
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   column-gap: 30px;
   row-gap: 20px;
 }
-.schedule, .finished-schedule{
+.schedule, .finished-schedule, .problem, .finished-problem{
   display: flex;
   flex-direction: column;
   border: 2px solid white;
@@ -36,58 +36,58 @@
   position: relative;
   background-color: var(--bg);
 }
-.finished-schedule{
+.finished-schedule, .finished-problem{
   border: 2px solid gray;
 }
-.schedule-title, .finished-schedule-title{
+.schedule-title, .finished-schedule-title, .problem-title, .finished-problem-title{
   font-weight: bold;
   background-color: var(--bg);
   display: flex;
   align-items: center;
 }
-.finished-schedule-title{
+.finished-schedule-title, .finished-problem-title{
   font-weight: normal;
   font-size: 13px;
 }
-.schedule-title-content, .finished-schedule-title-content{
+.schedule-title-content, .finished-schedule-title-content, .problem-title-content, .finished-problem-title-content{
   background-color: var(--bg);
 }
-.schedule-title-status, .finished-schedule-title-status{
+.schedule-title-status, .finished-schedule-title-status, .problem-title-status, .finished-problem-title-status{
   display: inline-block;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   margin-right: 4px;
 }
-.finished-schedule-title-status{
+.finished-schedule-title-status, .finished-problem-title-status{
   background-color: gray;
   font-weight: normal;
   font-size: 13px;
 }
-.schedule-time, .finished-schedule-time{
+.schedule-time, .finished-schedule-time, .problem-time, .finished-problem-time{
   padding: 2px;
   margin-top: 10px;
   border-radius: 5px;
   background-color: var(--bg);
 }
-.finished-schedule-time{
+.finished-schedule-time, .finished-schedule-time, .finished-problem-time, .finished-problem-time{
   font-weight: normal;
   font-size: 13px;
 }
-.schedule-time::before, .finished-schedule-time::before{
+.schedule-time::before, .finished-schedule-time::before, .problem-time::before, .finished-problem-time::before{
   content: "Time";
   font-size: 13px;
   color: gray;
 }
-.schedule-status, .finished-schedule-status{
+.schedule-status, .finished-schedule-status, .problem-status, .finished-problem-status{
   background-color: var(--bg);
   position: absolute;
   right: 10px;
 }
-.finished-schedule-status{
+.finished-schedule-status, .finished-problem-status{
   color: gray;
 }
-.schedule-description, .finished-schedule-description{
+.schedule-description, .finished-schedule-description, .problem-description, .finished-problem-description{
   position: absolute;
   left: 10px;
   bottom: 10px;
@@ -95,10 +95,10 @@
   padding: 5px;
   border-radius: 5px;
 }
-.finished-schedule-description{
+.finished-schedule-description, .finished-problem-description{
   background-color: gray;
 }
-.finished-schedule-description:hover{
+.finished-schedule-description:hover, .finished-problem-description:hover{
   background-color: rgb(90, 90, 90);
 }
 .schedule-description:hover{
@@ -157,7 +157,7 @@
   color: rgb(162, 162, 162);
 }
 @media (max-width: 760px){
-  #schedule-container, #finished-schedule-container{
+  #schedule-container, #finished-schedule-container, #problem-container, #finished-problem-container{
     width: 360px;
   }
 }

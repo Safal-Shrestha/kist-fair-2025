@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Participants Support Form</title>
+  <title>View Participants Problems</title>
   <link rel="stylesheet" href="../assets/css/nav.css">
+  <link rel="stylesheet" href="../assets/css/schedule.css">
   <link rel="stylesheet" href="../assets/css/font.css">
-  <link rel="stylesheet" href="../assets/css/form.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,8 +16,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
-<body class="participant-support">
-  <nav>
+<body class="event-problem">
+<nav>
     <ul>
       <li id="logo">
         KIST FAIR 2025
@@ -51,42 +51,34 @@
       </li>
     </ul>
   </nav>
-  <div class="main-body">
-    <form id="registration-form" action="../index.html" method="POST">
-      <div class="note">
-        Submit the form below to get help from volunteer
+  <div id="body">
+    <div id="problem-container">
+      <div id="problem-container-title">
+        PENDING ISSUES
       </div>
-      <div>
-        <label for="problem">Problem <span>*</span></label>
-        <input type="text" name="problem" id="name" placeholder="Enter the problem" autocomplete="off" class="input">
+      <div id="problem-container-body">
+        
       </div>
-      <div>
-        <label for="stall_no">Stall Number</label>
-        <input type="text" name="stall_no" id="email" placeholder="Enter your stall number" autocomplete="off"
-          class="input">
+    </div>
+    <div id="finished-problem-container">
+      <div id="finished-problem-container-title">
+        ALREADY SOLVED ISSUES
       </div>
-      <div>
-        <label for="description">Description</label>
-        <textarea type="text" name="description" id="description" placeholder="Enter the problem description"
-          autocomplete="off" class="input"></textarea>
+      <div id="finished-problem-container-body">
+        
       </div>
-      <div id="submit-button-holder">
-        <button id="submit" type="submit">Submit</button>
-      </div>
-      <div class=" field-note">Note: Field with * must be filled before submitted
-      </div>
-    </form>
+    </div>
   </div>
+  <div class="description-body">
+    <div class="description-body-title">
+    </div>
+    <div class="description-body-description">
+    </div>
+    <i class="fa-solid fa-xmark description-body-cross-button"></i>
+    <div class="description-body-time">00:00</div>
+  </div>
+  <div id="overlay"></div>
   <script src="../assets/js/nav.js"></script>
-  <script>
-    document.querySelector('#submit').addEventListener('click', (e) => {
-      let problem = document.querySelector('#name').value;
-      if (problem === '') {
-        alert('All the field with * must be filled!');
-        e.preventDefault();
-      }
-    })
-  </script>
+  <script src="../assets/js/getProblem.js"></script>
 </body>
-
 </html>
