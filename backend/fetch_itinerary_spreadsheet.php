@@ -8,7 +8,7 @@ use Google\Service\Sheets;
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $client = new Client();
-    $client->setAuthConfig('../api-keys/kist-fest-2025-itinerary.json');
+    $client->setAuthConfig('../api-keys/kist-fest-2025.json');
     $client->addScope(Sheets::SPREADSHEETS_READONLY);
 
     $service = new Sheets($client);
@@ -45,5 +45,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 else
 {
-    echo json_encode(['failure' => $_SESSION['REQUEST_METHOD']]);
+    echo json_encode(['failure' => $_SERVER['REQUEST_METHOD']]);
 }
