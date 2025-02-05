@@ -46,6 +46,9 @@
           <li>
             <a href="Participants/participant_support.html" id="support-pc">Support</a>
           </li>
+          <li>
+            <a href="Participants/volunteer_problem.html" id="problem-pc">Problems</a>
+          </li>
         </ul>
       </li>
       <li class="for-mobile">
@@ -56,6 +59,7 @@
           <a href="index.html" class="schedule-mobile">Schedule</a>
           <a href="map.html" class="map-mobile">Map</a>
           <a href="Participants/participant_support.html" class="support-mobile">Support</a>
+          <a href="Participants/volunteer_problem.html" class="problem-mobile">Problems</a>
         </div>
       </li>
     </ul>

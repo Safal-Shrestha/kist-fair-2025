@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form | Non Participants</title>
+  <link rel="stylesheet" href="../assets/css/form.css">
+  <link rel="stylesheet" href="../assets/css/font.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="main-body">
+    <img id="logo-form" src="../assets/img/logo.png" alt="Logo">
+    <form id="registration-form" action="" method="POST">
+      <div>
+        <label for="name">Notice <span>*</span> <span class="name-notice"> </span></label>
+        <input type="text" name="name" id="name" placeholder="Enter notice" autocomplete="off" class="input">
+        <div class="error name-error"></div>
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea name="description" id="description" placeholder="Decribe here" autocomplete="off"
+          class="input"></textarea>
+      </div>
+      <div id="submit-button-holder">
+        <button id="submit" type="submit">Submit</button>
+      </div>
+      <div class=" field-note">Note: Field with * must be filled before submitted
+      </div>
+    </form>
+    <script>
+        document.querySelector('#submit').addEventListener('click',(event)=>{
+            let name = document.querySelector('#name').value;
+            if(name === ''){
+                event.preventDefault();
+                alert('Fill the input field with *');
+            }
+        })
+    </script>
+  </div>
+</body>
+
+</html>
