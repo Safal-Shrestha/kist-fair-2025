@@ -1,0 +1,276 @@
+*{
+  --map: rgb(81, 81, 255);
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 8px;
+}
+
+.map-title{
+  position: relative;
+}
+
+.ground-div{
+  border: 1px solid white;
+  text-align: center;
+  padding-top: 5px;
+  background-color: var(--map);
+  cursor: pointer;
+}
+
+.ground-div:hover{
+  background-color: rgb(110, 110, 255);
+}
+  
+.ground-div1 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 12;
+}
+
+.ground-div2 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 11;
+}
+
+.ground-div3 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 10;
+}
+
+.ground-div4 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 9;
+}
+
+.ground-div5 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 8;
+}
+
+.ground-div6 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 7;
+}
+
+.ground-div7 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 6;
+}
+
+.ground-div8 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.ground-div9 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+
+.ground-div10 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.ground-div11 {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.ground-div12 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.ground-div13 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.ground-div14 {
+  grid-column-start: 4;
+  grid-row-start: 1;
+}
+
+.ground-div15 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 1;
+}
+
+.ground-div16 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 1;
+}
+
+.ground-div17 {
+  grid-column-start: 9;
+  grid-row-start: 1;
+}
+
+.ground-div18 {
+  grid-column-start: 10;
+  grid-row-start: 1;
+}
+
+.ground-div19 {
+  grid-column-start: 11;
+  grid-row-start: 1;
+}
+
+.ground-div20 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 11;
+  grid-row-start: 4;
+}
+
+.ground-div21 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 11;
+  grid-row-start: 5;
+}
+
+.ground-div22 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 11;
+  grid-row-start: 6;
+}
+
+.ground-div23 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 11;
+  grid-row-start: 7;
+}
+
+.ground-div24 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 11;
+  grid-row-start: 8;
+}
+
+.ground-div25 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 11;
+  grid-row-start: 9;
+}
+
+.ground-div26 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 5;
+}
+
+.ground-div27 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 6;
+}
+
+.ground-div28 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 7;
+}
+
+.ground-div29 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 8;
+}
+
+.ground-div30 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 9;
+}
+
+.ground-div31 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 10;
+}
+
+.ground-div32 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 4;
+}
+
+.ground-div33 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 4;
+}
+
+.ground-div34 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 5;
+}
+
+.ground-div35 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 6;
+}
+
+.ground-div36 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 7;
+}
+
+.ground-div37 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 8;
+}
+
+.ground-div38 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 9;
+}
+
+.ground-div39 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 10;
+}
+  
+.ground-entry{
+  position: absolute;
+  bottom: calc(0%);
+}
+
+.grounf-exit{
+  position: absolute;
+  bottom: calc(1%);
+}
+
+.go-back{
+  position: absolute;
+  left: calc(-40%);
+  cursor: pointer;
+}
+
+@media (max-width: 640px){
+  .ground-div{
+    font-size: 13px;
+  }
+}
