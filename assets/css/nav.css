@@ -82,7 +82,7 @@ nav ul{
   top: 40px;
   border: 1px solid gray;
   border-radius: 5px;
-  padding: 10px 0px 10px 0px;
+  padding: 20px 0px 20px 0px;
   z-index: 999;
 }
 .schedule-mobile{
@@ -107,16 +107,17 @@ background-color: var(--color);
   text-align: center;
   width: 60px;
 }
-.participant-support #map-pc{
+.participant-support #map-pc, .participant-support .map-mobile{
   text-decoration: none;
 }
-.participant-support #schedule-pc{
+.participant-support #schedule-pc, .participant-support .schedule-mobile{
   text-decoration: none;
 }
-#support-pc{
+#support-pc, .support-mobile{
   text-decoration: none;
+  background-color: var(--color);
 }
-.participant-support #support-pc{
+.participant-support #support-pc, .participant-support .support-mobile{
   background-color: var(--color);
   text-decoration: underline;
 }
