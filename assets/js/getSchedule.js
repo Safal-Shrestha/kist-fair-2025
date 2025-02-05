@@ -15,8 +15,10 @@ let fetchData = async () => {
   let f = await fetch('backend/fetch_itinerary.php');
   FetchedData = await f.json();
 
-  let ongoingCount = 0, completedCount = 0;
   if (hasChange(oldFetchedData, FetchedData)) {
+    document.querySelector('#finished-schedule-container-body').innerHTML = '';
+    document.querySelector('#schedule-container-body').innerHTML = '';
+    let ongoingCount = 0, completedCount = 0;
     FetchedData.forEach((data, index) => {
       if (data.status === 'completed') {
         completedCount++;
