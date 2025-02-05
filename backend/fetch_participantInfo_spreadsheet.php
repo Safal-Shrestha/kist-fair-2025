@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
     $service = new Sheets($client);
     $spreadsheetId = '1LmwdUAVJ4y7Fl6zDtNg9wuTFJKDZ8UW-91HTWJD32Hc';
-    $range = 'Sheet1!A1:I';
+    $range = 'Sheet1!A1:P';
 
     $response = $service->spreadsheets_values->get($spreadsheetId, $range);
     $values = $response->getValues();
@@ -26,23 +26,37 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             continue;
         }
 
-        $stall = intval($row[0]);
+        $projectId = intval($row[0]);
         $projectName = $conn->real_escape_string($row[1]);
-        $teamSize = $conn->real_escape_string($row[2]);
-        $member1 = $conn->real_escape_string($row[3]);
-        $member2 = $conn->real_escape_string($row[4]);
-        $member3 = $conn->real_escape_string($row[5]);
-        $member4 = $conn->real_escape_string($row[6]);
-        $member5 = $conn->real_escape_string($row[7]);
-        $projectCategory = $conn->real_escape_string($row[8]);
+        $description = $conn->real_escape_string($row[2]);
+        $teamSize = intval($row[3]);
+        $member1 = $conn->real_escape_string($row[4]);
+        $member1Contact = intval($row[5]);
+        $member2 = $conn->real_escape_string($row[6]);
+        $member2Contact = intval($row[7]);
+        $member3 = $conn->real_escape_string($row[8]);
+        $member3Contact = intval($row[9]);
+        $member4 = $conn->real_escape_string($row[10]);
+        $member4Contact = intval($row[11]);
+        $member5 = $conn->real_escape_string($row[12]);
+        $member5Contact = intval($row[13]);
+        $category = $conn->real_escape_string($row[14]);
+        $collegeName = $conn->real_escape_string($row[15]);
+        $role = "participant";
+        $uName = "part"."$projectId";
+        $pw = "part"."$projectId"."123";
 
-        $sql = "INSERT INTO participantinfo (stallNo, projectName, teamSize, member1, member2, member3, member4, member5, projectCategory) 
-                VALUES ($stall, '$projectName', '$teamSize', '$member1', '$member2', '$member3', '$member4', '$member5', '$projectCategory') 
-                ON DUPLICATE KEY UPDATE stallNo='$stall', projectName='$projectName', teamSize='$teamSize', member1='$member1', member2='$member2', member3='$member3', member4='$member4', member5='$member5', projectCategory='$projectCategory'";
+        $teamSQL = "INSERT INTO teams (team_id, name, description, category, total_member, mem1, mem1Contact, mem2, mem2Contact, mem3, mem3Contact, mem4, mem4Contact, mem5, mem5Contact, organization) 
+                VALUES ($projectId, '$projectName', '$description', '$category', $teamSize, '$member1', $member1Contact, '$member2', $member2Contact, '$member3', $member3Contact, '$member4', $member4Contact, '$member5', $member5Contact, '$collegeName') 
+                ON DUPLICATE KEY UPDATE team_id=$projectId, name='$projectName', description='$description', category='$category', total_member=$teamSize, mem1='$member1', mem1Contact=$member1Contact, mem2='$member2', mem2Contact=$member2Contact, mem3='$member3', mem3Contact=$member3Contact, mem4='$member4', mem4Contact=$member4Contact, mem5='$member5', mem5Contact=$member5Contact, organization='$collegeName'";
 
-        if (!$conn->query($sql)) {
-            echo "Error: " . $conn->error;
+        if (!$conn->query($teamSQL)) {
+            // echo "Error: " . $conn->error;
+            echo 1010101;
         }
+        echo (var_dump($category)."<br>");
+
+        // $userSQL = "INSERT INTO users (name, phone, organization, role, uNa  me, pw) VALUES ('$projectName', $member1Contact, '$collegeName', '$role', '$uName', '$pw') ON DUPLICATE KEY UPDATE ";
     }
 }
 
