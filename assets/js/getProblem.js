@@ -17,22 +17,22 @@ let fetchData = async () => {
   FetchedData = [{
     status: 'unsolved',
     title: 'Problem1',
-    time: '10:00' ,
+    time: '10:00',
     description: 'This is the description of problem 1'
   },
   {
     status: 'unsolved',
     title: 'Problem2',
-    time: '11:00' ,
+    time: '11:00',
     description: 'This is the description of problem 2'
   },
   {
     status: 'solved',
     title: 'Problem3',
-    time: '12:00' ,
+    time: '12:00',
     description: 'This is the description of problem 3'
   }
-]
+  ]
 
   if (hasChange(oldFetchedData, FetchedData)) {
     document.querySelector('#finished-problem-container-body').innerHTML = '';
@@ -209,6 +209,23 @@ let fetchData = async () => {
             document.querySelector('#overlay').style.display = 'none';
           });
           div1.appendChild(div2);
+        }
+
+        {//problem solved button
+          let div2 = document.createElement('div');
+          div2.classList.add('problem-solved')
+          div2.innerText = 'Problem Solved';
+          div2.style.backgroundColor = '#ee340d';
+          div1.appendChild(div2);
+          if (div2) {
+            div2.style.backgroundColor = '#ee340d';
+            div2.addEventListener('mouseenter', () => {
+              div2.style.backgroundColor = '#bc3e24';
+            });
+            div2.addEventListener('mouseleave', () => {
+              div2.style.backgroundColor = '#ee340d';
+            });
+          }
         }
 
         document.querySelector('#problem-container-body').appendChild(div1);
