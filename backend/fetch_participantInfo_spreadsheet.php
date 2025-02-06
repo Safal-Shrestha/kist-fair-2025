@@ -5,6 +5,62 @@ require '../vendor/autoload.php';
 use Google\Client;
 use Google\Service\Sheets;
 
+function shortenString($str)
+{
+    $parts = preg_split('/[:\-]/', $str, 2);
+    return isset($parts[0]) ? trim($parts[0]) : '';
+}
+
+function uploadMember($member, $memberContact, $role, $organization)
+{
+    include 'connect.php';
+    if ($member != '') {
+        $checkSQL = "SELECT id FROM users WHERE name = '$member' AND organization = '$organization'";
+        $result = $conn->query($checkSQL);
+    
+        if ($result->num_rows > 0) {
+            $updateSQL = "UPDATE users 
+                          SET phone = $memberContact, role = '$role' 
+                          WHERE name = '$member' AND organization = '$organization'";
+            if (!$conn->query($updateSQL)) {
+                echo "Error updating record: " . $conn->error;
+            }
+        } else {
+            $insertSQL = "INSERT INTO users (name, phone, organization, role) 
+                          VALUES ('$member', $memberContact, '$organization', '$role')";
+            if (!$conn->query($insertSQL)) {
+                echo "Error inserting record: " . $conn->error;
+            }
+        }
+    }
+}
+
+function linkMemberToTeam($member, $organization, $teamId)
+{
+    include 'connect.php';
+
+    if ($member != '') {
+        $userSQL = "SELECT id FROM users WHERE name = '$member' AND organization = '$organization'";
+        $userResult = $conn->query($userSQL);
+
+        if ($userResult->num_rows > 0) {
+            $userRow = $userResult->fetch_assoc();
+            $userId = $userRow['id'];
+
+            $checkLinkSQL = "SELECT id FROM team_members WHERE team_id = $teamId AND member_id = $userId";
+            $checkLinkResult = $conn->query($checkLinkSQL);
+
+            if ($checkLinkResult->num_rows == 0) {
+                $insertLinkSQL = "INSERT INTO team_members (team_id, member_id) VALUES ($teamId, $userId)";
+                if (!$conn->query($insertLinkSQL)) {
+                    echo "Error linking member to team: " . $conn->error;
+                }
+            }
+        }
+    }
+}
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $client = new Client();
@@ -43,20 +99,33 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $category = $conn->real_escape_string($row[14]);
         $collegeName = $conn->real_escape_string($row[15]);
         $role = "participant";
-        $uName = "part"."$projectId";
-        $pw = "part"."$projectId"."123";
 
-        $teamSQL = "INSERT INTO teams (team_id, name, description, category, total_member, mem1, mem1Contact, mem2, mem2Contact, mem3, mem3Contact, mem4, mem4Contact, mem5, mem5Contact, organization) 
-                VALUES ($projectId, '$projectName', '$description', '$category', $teamSize, '$member1', $member1Contact, '$member2', $member2Contact, '$member3', $member3Contact, '$member4', $member4Contact, '$member5', $member5Contact, '$collegeName') 
-                ON DUPLICATE KEY UPDATE team_id=$projectId, name='$projectName', description='$description', category='$category', total_member=$teamSize, mem1='$member1', mem1Contact=$member1Contact, mem2='$member2', mem2Contact=$member2Contact, mem3='$member3', mem3Contact=$member3Contact, mem4='$member4', mem4Contact=$member4Contact, mem5='$member5', mem5Contact=$member5Contact, organization='$collegeName'";
+        $user_name = str_replace(' ', '', $projectName);
+        $user_name = strtolower($user_name);
+        $user_name = shortenString($user_name);
+        
+        $uName = "part_"."$user_name";
+        $pw = "$user_name"."123";
+
+        $teamSQL = "INSERT INTO teams (team_id, name, description, category, total_member, organization, user_name, password) 
+                VALUES ($projectId, '$projectName', '$description', '$category', $teamSize, '$collegeName', '$uName', '$pw') 
+                ON DUPLICATE KEY UPDATE team_id=$projectId, name='$projectName', description='$description', category='$category', total_member=$teamSize, organization='$collegeName', user_name='$uName', password='$pw'";
 
         if (!$conn->query($teamSQL)) {
-            // echo "Error: " . $conn->error;
-            echo 1010101;
+            echo "Error: " . $conn->error;
         }
-        echo (var_dump($category)."<br>");
 
-        // $userSQL = "INSERT INTO users (name, phone, organization, role, uNa  me, pw) VALUES ('$projectName', $member1Contact, '$collegeName', '$role', '$uName', '$pw') ON DUPLICATE KEY UPDATE ";
+        uploadMember($member1, $member1Contact, $role, $collegeName);
+        uploadMember($member2, $member2Contact, $role, $collegeName);
+        uploadMember($member3, $member3Contact, $role, $collegeName);
+        uploadMember($member4, $member4Contact, $role, $collegeName);
+        uploadMember($member5, $member5Contact, $role, $collegeName);
+
+        linkMemberToTeam($member1, $collegeName, $projectId);
+        linkMemberToTeam($member2, $collegeName, $projectId);
+        linkMemberToTeam($member3, $collegeName, $projectId);
+        linkMemberToTeam($member4, $collegeName, $projectId);
+        linkMemberToTeam($member5, $collegeName, $projectId);
     }
 }
 
