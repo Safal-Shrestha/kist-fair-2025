@@ -1,16 +1,9 @@
 <?php
   include 'backend/connect.php';
 
-  session_start();
+  session_start();       
+?>
 
-    if(isset($_SESSION['id']))
-    {
-        echo $_SESSION['name'];
-?>
-<button onclick="logout()">Log Out</button>
-<?php
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,12 +36,19 @@
           <li>
             <a href="map.html" id="map-pc">Map</a>
           </li>
+          <?php
+             if(isset($_SESSION['id']))
+             {
+          ?>
           <li>
             <a href="Participants/participant_support.html" id="support-pc">Support</a>
           </li>
           <li>
             <a href="Participants/volunteer_problem.html" id="problem-pc">Problems</a>
           </li>
+          <?php
+             }
+          ?>
         </ul>
       </li>
       <li class="for-mobile">

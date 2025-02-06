@@ -5,10 +5,6 @@
   color: white;
 }
 
-.main-body {
-  
-}
-
 .stall-and-participant-count-container {
   margin-top: 40px;
   display: flex;
@@ -34,7 +30,7 @@
 .participant-count::before {
   display: block;
   content: 'Participant No: ';
-  font-size: 40px;
+  font-size: 70px;
   color: rgb(173, 173, 173);
 }
 
