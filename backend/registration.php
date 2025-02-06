@@ -15,6 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssss", $name, $email, $phone_no, $register_mode, $organization);
 
     if ($stmt->execute()) {
+        session_start();
+        $_SESSION['id'] = session_create_id();
         header("location:../index.php");
     } 
     

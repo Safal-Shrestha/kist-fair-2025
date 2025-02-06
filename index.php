@@ -1,5 +1,10 @@
 <?php
-  session_start();       
+  session_start();
+  
+  if(!isset($_SESSION['id']))
+  {
+    header("Location: /automation-system/Participants/login_page.php");
+  }
 ?>
 
 <!DOCTYPE html>

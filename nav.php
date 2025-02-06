@@ -18,23 +18,18 @@
         <?php
           if(isset($_SESSION['id']))
           {
+        ?>
+        <li>
+          <a <?php
             if($_SESSION['role'] == 'participant')
-            {
-        ?>
-        <li>
-          <a id="support-pc">Support</a>
+            { echo "class = 'hidden'";}?>id="support-pc">Support</a>
         </li>
-        <?php
-          }
+        <li>
+          <a <?php
           if($_SESSION['role'] == 'volunteer' ||$_SESSION['role'] == 'admin')
-          {
-        ?>
-        <li>
-          <a id="problem-pc">Problems</a>
+          { echo "class = 'hidden'";}
+        ?> id="problem-pc">Problems</a>
         </li>
-        <?php
-          }
-        ?>
         <?php
           }
         ?>
@@ -50,8 +45,25 @@
       <div class="mobile">
         <a class="schedule-mobile">Schedule</a>
         <a class="map-mobile">Map</a>
-        <a  class="support-mobile">Support</a>
-        <a class="problem-mobile">Problems</a>
+        <?php
+          if(isset($_SESSION['id']))
+          {
+        ?>
+        <li>
+          <a <?php
+                if($_SESSION['role'] == 'participant')
+                { echo "class = 'hidden'";}
+          ?> id="support-pc">Support</a>
+        </li>
+        <li>
+          <a <?php
+          if($_SESSION['role'] == 'volunteer' ||$_SESSION['role'] == 'admin')
+          {echo "class = 'hidden'";}
+        ?> id="problem-pc">Problems</a>
+        </li>
+        <?php
+          }
+        ?>
         <a  class="about-us-mobile">About us</a>
       </div>
     </li>
