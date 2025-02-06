@@ -187,8 +187,8 @@ nav ul {
   justify-content: center;
   position: absolute;
   width: 130px;
-  left: -105px;
   top: 40px;
+  right: 0px;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 20px 0px 20px 0px;
