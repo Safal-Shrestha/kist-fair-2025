@@ -12,7 +12,7 @@ const hasChange = (oldFetchedData, FetchedData) => {
 }
 
 let fetchData = async () => {
-  let f = await fetch('backend/problemFetch.php');
+  let f = await fetch('/automation-system/backend/problemFetch.php');
   FetchedData = await f.json();
 
   if (hasChange(oldFetchedData, FetchedData)) {
@@ -20,7 +20,7 @@ let fetchData = async () => {
     document.querySelector('#problem-container-body').innerHTML = '';
     let ongoingCount = 0, completedCount = 0;
     FetchedData.forEach((data, index) => {
-      if (data.status.toLowerCase() === 'solved') {
+      if (data.is_solved === '1') {
         completedCount++;
         let div1 = document.createElement('div');
         div1.classList.add(`finished-problem`, `finished-problem${completedCount}`);
@@ -40,34 +40,10 @@ let fetchData = async () => {
           div1.appendChild(div2);
         }
 
-        {//for time
-          let div2 = document.createElement('div');
-          div2.classList.add('finished-problem-time');
-          let hour = data.time.slice(0, 2);
-          hour = parseInt(hour);
-          let format;
-          if (hour > 12) {
-            hour = hour % 12;
-            format = 'P:M';
-          }
-          else if (hour == 12) {
-            format = 'P:M';
-          }
-          else {
-            format = 'A:M';
-          }
-          let min = data.time.slice(3, 5);
-          div2.innerText = ' ' + hour + ':' + min + ' ' + format;
-          time = hour + ':' + min + ' ' + format;
-          div1.appendChild(div2);
-        }
-
         {//for status
           let div2 = document.createElement('div');
           div2.classList.add('finished-problem-status');
-          let first = data.status.slice(0, 1).toUpperCase();
-          let text = first + data.status.slice(1);
-          div2.innerText = text;
+          div2.innerText = 'Solved';
           div1.appendChild(div2);
         }
 
@@ -81,23 +57,8 @@ let fetchData = async () => {
             const centerY = scrollY + window.innerHeight / 5;
             document.querySelector('.description-body').style.top = `${centerY}px`;
             document.querySelector('#overlay').style.display = 'block';
-            document.querySelector('.description-body-title').innerText = data.name;
+            document.querySelector('.description-body-title').innerText = data.title;
             document.querySelector('.description-body-description').innerText = data.description;
-            let hour = data.time.slice(0, 2);
-            let min = data.time.slice(3, 5);
-            let format;
-            if (hour > 12) {
-              hour = hour % 12;
-              format = 'P:M';
-            }
-            else if (hour == 12) {
-              format = 'P:M';
-            }
-            else {
-              format = 'A:M';
-            }
-            let time = hour + ':' + min + ' ' + format;
-            document.querySelector('.description-body-time').innerText = time;
           });
           document.querySelector('.description-body-cross-button').addEventListener('click', () => {
             document.querySelector('.description-body').style.display = 'none';
@@ -108,7 +69,7 @@ let fetchData = async () => {
 
         document.querySelector('#finished-problem-container-body').appendChild(div1);
       }
-      else if (data.status.toLowerCase() === 'unsolved') {
+      else{
         ongoingCount++;
         let div1 = document.createElement('div');
         div1.classList.add(`problem`, `problem${ongoingCount}`);
@@ -128,31 +89,10 @@ let fetchData = async () => {
           div1.appendChild(div2);
         }
 
-        {//for time
-          let div2 = document.createElement('div');
-          div2.classList.add('problem-time');
-          let hour = data.time.slice(0, 2);
-          let min = data.time.slice(3, 5);
-          let format;
-          if (hour > 12) {
-            hour = hour % 12;
-            format = 'P:M';
-          }
-          else if (hour == 12) {
-            format = 'P:M';
-          }
-          else {
-            format = 'A:M';
-          }
-          div2.innerText = ' ' + hour + ':' + min + ' ' + format;
-          div1.appendChild(div2);
-        }
-
         {//for status
           let div2 = document.createElement('div');
           div2.classList.add('problem-status');
-          let first = data.status.slice(0, 1).toUpperCase();
-          let text = first + data.status.slice(1);
+          let text = 'Unsolved';
           div2.innerText = text;
           div1.appendChild(div2);
         }
@@ -169,21 +109,6 @@ let fetchData = async () => {
             document.querySelector('#overlay').style.display = 'block';
             document.querySelector('.description-body-title').innerText = data.title;
             document.querySelector('.description-body-description').innerText = data.description;
-            let hour = data.time.slice(0, 2);
-            let min = data.time.slice(3, 5);
-            let format;
-            if (hour > 12) {
-              hour = hour % 12;
-              format = 'P:M';
-            }
-            else if (hour == 12) {
-              format = 'P:M';
-            }
-            else {
-              format = 'A:M';
-            }
-            let time = hour + ':' + min + ' ' + format;
-            document.querySelector('.description-body-time').innerText = time;
           });
           document.querySelector('.description-body-cross-button').addEventListener('click', () => {
             document.querySelector('.description-body').style.display = 'none';
@@ -194,7 +119,7 @@ let fetchData = async () => {
 
         {//problem solved button
           let div2 = document.createElement('div');
-          div2.classList.add(`problem-solved problem-solved${index}`)
+          div2.classList.add(`problem-solved`, `problem-solved${index}`)
           div2.innerText = 'Problem Solved';
           div2.style.backgroundColor = '#ee340d';
           div1.appendChild(div2);
