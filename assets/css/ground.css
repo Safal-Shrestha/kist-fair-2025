@@ -142,8 +142,8 @@
   font-size: 15px;
 }
 .description-body-title::before{
-  content: "Project Name: ";
-  font-size: 13px;
+  content: "title: ";
+  font-size: 10px;
 }
 .description-body-description{
   padding: 5px 20px 5px 20px;
