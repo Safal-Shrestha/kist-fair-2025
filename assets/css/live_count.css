@@ -29,8 +29,13 @@
 
 .participant-count::before {
   display: block;
+<<<<<<< HEAD
   content: 'Participant: ';
   font-size: 40px;
+=======
+  content: 'Participant No: ';
+  font-size: 70px;
+>>>>>>> 763019122d1672af5c453700b2c0b69b25fee547
   color: rgb(173, 173, 173);
 }
 
