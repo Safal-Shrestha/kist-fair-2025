@@ -15,10 +15,10 @@
           <a id="map-pc">Map</a>
         </li>
         <?php if(isset($_SESSION['id'])) { ?>
-          <li <?php if($_SESSION['role'] == 'volunteer'|| $_SESSION['role'] == 'admin') { echo "class='hidden'"; } ?>>
+          <li <?php if($_SESSION['role'] == 'volunteer'|| $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'visitor') { echo "class='hidden'"; } ?>>
             <a id="support-pc">Support</a>
           </li>
-          <li <?php if($_SESSION['role'] == 'participant' ) { echo "class='hidden'"; } ?>>
+          <li <?php if($_SESSION['role'] == 'participant' || $_SESSION['role'] == 'visitor' ) { echo "class='hidden'"; } ?>>
             <a id="problem-pc">Problems</a>
           </li>
         <?php } ?>
@@ -37,8 +37,8 @@
           <a class="schedule-mobile">Schedule</a>
           <a class="map-mobile">Map</a>
           <?php if(isset($_SESSION['id'])) { ?>
-          <a <?php if($_SESSION['role'] == 'volunteer' || $_SESSION['role'] == 'admin') { echo "class='hidden'"; } ?> class="support-mobile">Support</a>
-          <a <?php if($_SESSION['role'] == 'participant') { echo "class='hidden'"; } ?> class="problem-mobile">Problems</a>
+          <a <?php if($_SESSION['role'] == 'volunteer' || $_SESSION['role'] == 'admin' || $_SESSION['role'] == 'visitor') { echo "class='hidden'"; } ?> class="support-mobile">Support</a>
+          <a <?php if($_SESSION['role'] == 'participant' || $_SESSION['role'] == 'visitor') { echo "class='hidden'"; } ?> class="problem-mobile">Problems</a>
           <?php } ?>
           <a class="about-us-mobile">About Us</a>
       </div>

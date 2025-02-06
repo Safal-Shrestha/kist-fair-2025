@@ -32,7 +32,7 @@ if ($project_result->num_rows > 0)
 
 header('Content-Type: application/json');
 echo json_encode([
-    "Visitor" => $visitorCount,
-    "Participant" => $participantCount,
-    "Project" => $projectCount
+    "visitor" => $visitorCount,
+    "participant" => $participantCount,
+    "project" => $projectCount
 ]);

@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         session_start();
         $_SESSION['id'] = session_create_id();
+        $_SESSION['role'] = "visitor";
         header("location:../index.php");
     } 
     
