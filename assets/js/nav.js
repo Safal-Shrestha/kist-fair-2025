@@ -23,27 +23,39 @@ let loadNav = async () => {
   document.querySelector('#map-pc').addEventListener('click',()=>{
     window.location.href = '/automation-system/map.html';
   });
-  document.querySelector('.schedule-mobile').addEventListener('click',()=>{
+  document.querySelector('.map-mobile').addEventListener('click',()=>{
     window.location.href = '/automation-system/map.html';
   });
-  document.querySelector('#support-pc').addEventListener('click',()=>{
-    window.location.href = '/automation-system/Participants/participant_support.html';
-  });
-  document.querySelector('.support-mobile').addEventListener('click',()=>{
-    window.location.href = '/automation-system/Participants/participant_support.html';
-  });
-  document.querySelector('#problem-pc').addEventListener('click',()=>{
-    window.location.href = '/automation-system/Participants/volunteer_problem.html';
-  });
-  document.querySelector('.problem-mobile').addEventListener('click',()=>{
-    window.location.href = '/automation-system/Participants/volunteer_problem.html';
-  });
-  document.querySelector('#about-us-pc').addEventListener('click',()=>{
-    window.location.href = '/automation-system/about_us.html';
-  });
-  document.querySelector('.about-us-mobile').addEventListener('click',()=>{
-    window.location.href = '/automation-system/about_us.html';
-  });
+  if(document.querySelector('#support-pc')){
+    document.querySelector('#support-pc').addEventListener('click',()=>{
+      window.location.href = '/automation-system/Participants/participant_support.html';
+    });
+  }
+  if(document.querySelector('.support-mobile')){
+    document.querySelector('.support-mobile').addEventListener('click',()=>{
+      window.location.href = '/automation-system/Participants/participant_support.html';
+    });
+  }
+  if(document.querySelector('#problem-pc')){
+    document.querySelector('#problem-pc').addEventListener('click',()=>{
+      window.location.href = '/automation-system/Participants/volunteer_problem.html';
+    });
+  }
+  if(document.querySelector('.problem-mobile')){
+    document.querySelector('.problem-mobile').addEventListener('click',()=>{
+      window.location.href = '/automation-system/Participants/volunteer_problem.html';
+    });
+  }
+  if(document.querySelector('#about-us-pc')){
+    document.querySelector('#about-us-pc').addEventListener('click',()=>{
+      window.location.href = '/automation-system/about_us.html';
+    });
+  }
+  if(document.querySelector('.about-us-mobile')){
+    document.querySelector('.about-us-mobile').addEventListener('click',()=>{
+      window.location.href = '/automation-system/about_us.html';
+    });
+  }
 }
 
 window.onload = loadNav;
