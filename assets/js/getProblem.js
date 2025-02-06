@@ -69,7 +69,7 @@ let fetchData = async () => {
 
         document.querySelector('#finished-problem-container-body').appendChild(div1);
       }
-      else{
+      else {
         ongoingCount++;
         let div1 = document.createElement('div');
         div1.classList.add(`problem`, `problem${ongoingCount}`);
@@ -132,7 +132,21 @@ let fetchData = async () => {
               div2.style.backgroundColor = '#ee340d';
             });
           }
+          div2.addEventListener('click', () => {
+            let sendData = async () => {
+              let f = await fetch('', {   // this is where the php file link goes
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({id: data.id})
+            });
+            let res = await f.json();
+            }
+            sendData();
+          });
         }
+
         document.querySelector('#problem-container-body').appendChild(div1);
       }
 
