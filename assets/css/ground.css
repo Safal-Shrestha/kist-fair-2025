@@ -127,7 +127,7 @@
 
 .description-body{
   position: absolute;
-  left: calc(50vw - 250px);
+  left: calc(50vw - 253px);
   width: 500px;
   height: 400px;
   border: 2px solid white;
@@ -142,7 +142,7 @@
   font-size: 15px;
 }
 .description-body-title::before{
-  content: "title: ";
+  content: "College: ";
   font-size: 10px;
   color: gray;
 }
@@ -150,6 +150,9 @@
   padding: 5px 20px 5px 20px;
   margin-top: 5px;
   border-top: 2px solid gray;
+}
+.description-body-description::before{
+  content: 'Category: ';
 }
 .description-body-cross-button{
   position: absolute;
