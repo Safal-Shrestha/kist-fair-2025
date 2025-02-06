@@ -144,6 +144,7 @@
 .description-body-title::before{
   content: "title: ";
   font-size: 10px;
+  color: gray;
 }
 .description-body-description{
   padding: 5px 20px 5px 20px;
@@ -206,7 +207,7 @@
 @media (max-width: 530px){
   .description-body{
     left: calc(50vw - 180px);
-    width: 350px;
+    width: 340px;
     height: 400px;
   }
   .description-body-title{

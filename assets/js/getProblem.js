@@ -12,27 +12,8 @@ const hasChange = (oldFetchedData, FetchedData) => {
 }
 
 let fetchData = async () => {
-  // let f = await fetch('backend/fetch_itinerary.php');
-  // FetchedData = await f.json();
-  FetchedData = [{
-    status: 'unsolved',
-    title: 'Problem1',
-    time: '10:00',
-    description: 'This is the description of problem 1'
-  },
-  {
-    status: 'unsolved',
-    title: 'Problem2',
-    time: '11:00',
-    description: 'This is the description of problem 2'
-  },
-  {
-    status: 'solved',
-    title: 'Problem3',
-    time: '12:00',
-    description: 'This is the description of problem 3'
-  }
-  ]
+  let f = await fetch('backend/problemFetch.php');
+  FetchedData = await f.json();
 
   if (hasChange(oldFetchedData, FetchedData)) {
     document.querySelector('#finished-problem-container-body').innerHTML = '';
@@ -213,7 +194,7 @@ let fetchData = async () => {
 
         {//problem solved button
           let div2 = document.createElement('div');
-          div2.classList.add('problem-solved')
+          div2.classList.add(`problem-solved problem-solved${index}`)
           div2.innerText = 'Problem Solved';
           div2.style.backgroundColor = '#ee340d';
           div1.appendChild(div2);
