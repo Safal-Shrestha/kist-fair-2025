@@ -7,9 +7,9 @@ $problem = array();
 $sql = "SELECT * FROM problems";
 $result = $conn->query($sql);
 
-if($result > 0)
+if($result ->num_rows > 0)
 {
-    while ($row = $itinerary_result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         $problem[] = $row;
     }
 }
