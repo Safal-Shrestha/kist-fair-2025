@@ -42,17 +42,12 @@ nav ul{
   cursor: pointer;
   background-color: var(--color);
 }
-.event-schedule #schedule-pc{
-  text-decoration: underline;
-}
-.event-schedule #map-pc{
+#map-pc, .map-mobile, #schedule-pc, .schedule-mobile,
+#support-pc, .support-mobile, #problem-pc, .problem-mobile,
+#about-us-pc, .about-us-mobile{
   text-decoration: none;
-}
-.event-map #schedule-pc{
-  text-decoration: none;
-}
-.event-map #map-pc{
-  text-decoration: underline;
+  background-color: var(--color);
+  cursor: pointer;
 }
 .for-non-mobile{
   display: block;
@@ -67,9 +62,6 @@ nav ul{
 }
 .bar i{
   background-color: var(--color);
-}
-.f #schedule-pc, .u #schedule-pc, .f .schedule-mobile, .u .schedule-mobile{
-  text-decoration: none;
 }
 .mobile{
   background-color: var(--color);
@@ -101,41 +93,15 @@ background-color: var(--color);
   background-color: var(--color);
   text-decoration: none;
 }
-.event-schedule .schedule-mobile{
-  text-decoration: underline;
-}
-.event-schedule .map-mobile{
-  text-decoration: none;
-}
-.event-map .schedule-mobile{
-  text-decoration: none;
-}
-.event-map .map-mobile{
-  text-decoration: underline;
-}
 #schedule-mobile{
   text-align: center;
   width: 60px;
 }
-.event-problem #schedule-pc, .event-problem #map-pc, .event-problem .schedule-mobile, .event-problem .map-mobile{
-  text-decoration: none;
-}
-.event-problem #problem-pc, .event-problem .problem-mobile{
-  text-decoration: underline;
-}
-.participant-support #map-pc, .participant-support .map-mobile{
-  text-decoration: none;
-}
-.participant-support #schedule-pc, .participant-support .schedule-mobile{
-  text-decoration: none;
-}
 #support-pc, .support-mobile{
-  text-decoration: none;
   background-color: var(--color);
 }
 .participant-support #support-pc, .participant-support .support-mobile{
   background-color: var(--color);
-  text-decoration: underline;
 }
 @media (max-width: 733px){
   .for-non-mobile{

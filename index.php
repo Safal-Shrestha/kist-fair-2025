@@ -23,6 +23,9 @@
 </head>
 
 <body class="event-schedule">
+<<<<<<< HEAD
+  <div id="nav-bar"></div>
+=======
 <nav>
     <ul>
       <li id="logo">
@@ -64,6 +67,7 @@
       </li>
     </ul>
   </nav>
+>>>>>>> 763019122d1672af5c453700b2c0b69b25fee547
   <div id="body">
     <div id="schedule-container">
       <div id="schedule-container-title">
