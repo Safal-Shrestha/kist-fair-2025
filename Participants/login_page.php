@@ -10,6 +10,11 @@
   <title>Login Page | Participants & Volunteer</title>
   <link rel="stylesheet" href="../assets/css/form.css">
   <link rel="stylesheet" href="../assets/css/font.css">
+  <style>
+    .invalid{
+      color: red;
+    }
+  </style>
 </head>
 
 <body>

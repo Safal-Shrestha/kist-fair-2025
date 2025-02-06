@@ -227,7 +227,6 @@ let fetchData = async () => {
             });
           }
         }
-
         document.querySelector('#problem-container-body').appendChild(div1);
       }
 

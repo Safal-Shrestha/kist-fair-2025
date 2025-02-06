@@ -282,3 +282,11 @@ nav ul {
     display: none;
   }
 }
+
+#map-pc, .map-mobile, #schedule-pc, .schedule-mobile,
+#support-pc, .support-mobile, #problem-pc, .problem-mobile,
+#about-us-pc, .about-us-mobile{
+  font-weight: 600;
+  background-color: var(--color);
+  cursor: pointer;
+}
