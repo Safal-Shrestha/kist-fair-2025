@@ -15,13 +15,13 @@ function uploadMember($member, $memberContact, $role, $organization)
 {
     include 'connect.php';
     if ($member != '') {
-        $checkSQL = "SELECT id FROM users WHERE name = '$member' AND organization = '$organization'";
+        $checkSQL = "SELECT id FROM users WHERE name = '$member' AND organization = '$organization' AND phone = '$memberContact'";
         $result = $conn->query($checkSQL);
     
         if ($result->num_rows > 0) {
             $updateSQL = "UPDATE users 
-                          SET phone = $memberContact, role = '$role' 
-                          WHERE name = '$member' AND organization = '$organization'";
+                          SET role = '$role' 
+                          WHERE name = '$member' AND organization = '$organization' AND phone = '$memberContact'";
             if (!$conn->query($updateSQL)) {
                 echo "Error updating record: " . $conn->error;
             }
