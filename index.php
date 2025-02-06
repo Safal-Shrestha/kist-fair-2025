@@ -30,40 +30,7 @@
 </head>
 
 <body class="event-schedule">
-<nav>
-    <ul>
-      <li id="logo">
-        KIST FAIR 2025
-      </li>
-      <li class="for-non-mobile">
-        <ul class="inner-list">
-          <li>
-            <a href="index.html" id="schedule-pc">Schedule</a>
-          </li>
-          <li>
-            <a href="map.html" id="map-pc">Map</a>
-          </li>
-          <li>
-            <a href="Participants/participant_support.html" id="support-pc">Support</a>
-          </li>
-          <li>
-            <a href="Participants/volunteer_problem.html" id="problem-pc">Problems</a>
-          </li>
-        </ul>
-      </li>
-      <li class="for-mobile">
-        <ul class="bar">
-          <i class="fa-solid fa-bars"></i>
-        </ul>
-        <div class="mobile">
-          <a href="index.html" class="schedule-mobile">Schedule</a>
-          <a href="map.html" class="map-mobile">Map</a>
-          <a href="Participants/participant_support.html" class="support-mobile">Support</a>
-          <a href="Participants/volunteer_problem.html" class="problem-mobile">Problems</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
+  <div id="nav-bar"></div>
   <div id="body">
     <div id="schedule-container">
       <div id="schedule-container-title">

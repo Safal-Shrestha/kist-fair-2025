@@ -1,0 +1,284 @@
+*{
+  color: white;
+  --color: rgb(52, 52, 52);
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-weight: 500;
+  margin: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.about h1 {
+  font-size: 2.5rem;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px 0;
+}
+
+.member {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.member:hover {
+  transform: translateY(-10px);
+}
+
+.member h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.member p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+@media screen and (max-width: 768px) {
+  .team {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .member {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .team {
+    grid-template-columns: 1fr;
+  }
+
+  .member h3 {
+    font-size: 1.4rem;
+  }
+
+  .member p {
+    font-size: 0.9rem;
+  }
+}
+
+nav {
+  padding: 10px 0 5px 0;
+  border-bottom: 1px solid gray;
+  height: 40px;
+  display: flex;
+  background-color: var(--color);
+}
+
+nav ul {
+  flex: 1;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color);
+}
+
+#logo {
+  pointer-events: none;
+  padding-left: 20px;
+  font-size: 22px;
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+  cursor: pointer;
+  background-color: var(--color);
+}
+
+.inner-list {
+  padding: 0 30px 0 0;
+  display: flex;
+  column-gap: 70px;
+}
+
+.inner-list li {
+  background-color: var(--color);
+}
+
+#schedule-pc,
+#map-pc {
+  cursor: pointer;
+  background-color: var(--color);
+}
+
+.event-schedule #schedule-pc {
+  text-decoration: underline;
+}
+
+.event-schedule #map-pc {
+  text-decoration: none;
+}
+
+.event-map #schedule-pc {
+  text-decoration: none;
+}
+
+.event-map #map-pc {
+  text-decoration: underline;
+}
+
+.for-non-mobile {
+  display: block;
+}
+
+.for-mobile {
+  display: none;
+  position: relative;
+}
+
+.bar {
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.bar i {
+  background-color: var(--color);
+}
+
+.f #schedule-pc,
+.u #schedule-pc,
+.f .schedule-mobile,
+.u .schedule-mobile {
+  text-decoration: none;
+}
+
+.mobile {
+  background-color: var(--color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  justify-content: center;
+  position: absolute;
+  width: 130px;
+  left: -105px;
+  top: 40px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 20px 0px 20px 0px;
+  z-index: 999;
+}
+
+.schedule-mobile {
+  background-color: var(--color);
+}
+
+.map-mobile {
+  background-color: var(--color);
+}
+
+#problem-pc {
+  background-color: var(--color);
+  text-decoration: none;
+}
+
+.problem-mobile {
+  background-color: var(--color);
+  text-decoration: none;
+}
+
+.event-schedule .schedule-mobile {
+  text-decoration: underline;
+}
+
+.event-schedule .map-mobile {
+  text-decoration: none;
+}
+
+.event-map .schedule-mobile {
+  text-decoration: none;
+}
+
+.event-map .map-mobile {
+  text-decoration: underline;
+}
+
+#schedule-mobile {
+  text-align: center;
+  width: 60px;
+}
+
+.event-problem #schedule-pc,
+.event-problem #map-pc,
+.event-problem .schedule-mobile,
+.event-problem .map-mobile {
+  text-decoration: none;
+}
+
+.event-problem #problem-pc,
+.event-problem .problem-mobile {
+  text-decoration: underline;
+}
+
+.participant-support #map-pc,
+.participant-support .map-mobile {
+  text-decoration: none;
+}
+
+.participant-support #schedule-pc,
+.participant-support .schedule-mobile {
+  text-decoration: none;
+}
+
+#support-pc,
+.support-mobile {
+  text-decoration: none;
+  background-color: var(--color);
+}
+
+.participant-support #support-pc,
+.participant-support .support-mobile {
+  background-color: var(--color);
+  text-decoration: underline;
+}
+
+@media (max-width: 733px) {
+  .for-non-mobile {
+    display: none;
+  }
+
+  .for-mobile {
+    display: block;
+    background-color: var(--color);
+  }
+
+  .mobile {
+    display: none;
+  }
+}
