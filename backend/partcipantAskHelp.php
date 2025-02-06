@@ -5,23 +5,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $problem = $_POST["problem"];
     $stall_no = $_POST["stall_no"];
     $description = $_POST["description"];
+    $team_id = $_SESSION['id'];
 
-    $register_query = "INSERT INTO users (name,email,phone,role,organization)
-    VALUES (?, ?, ?, ?, ?)";
+    $fetchStallQuery = "SELECT * FROM team_stall WHERE team_id='$team_id'";
+    $stallResult = $conn->query($fetchStallQuery);
+    $row = mysqli_fetch_array($stallResult);
+    $stall_no = $row['stall_id'];
 
-    $stmt = $conn->prepare($register_query);
+    $problem_query = "INSERT INTO problems (title,description,team_id,stall_id)
+    VALUES (?, ?, ?, ?)";
 
-    $stmt->bind_param("sssss", $name, $email, $phone_no, $register_mode, $organization);
+    $stmt = $conn->prepare($problem_query);
 
-    if ($stmt->execute()) {
-        session_start();
-        $_SESSION['id'] = session_create_id();
-        header("location:../index.php");
-    } 
-    
-    else {
-        echo "Error: " . $stmt->error;
-    }
+    $stmt->bind_param("ssii", $problem, $description, $team_id, $stall_no);
+
+    $stmt->execute();
 
     $stmt->close();
+
+    header("Location: /automation-system");
+
 }

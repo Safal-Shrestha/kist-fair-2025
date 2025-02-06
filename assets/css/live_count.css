@@ -22,14 +22,14 @@
 
 .stall-count::before {
   display: block;
-  content: 'Projects: ';
+  content: 'Projects';
   font-size: 70px;
   color: rgb(173, 173, 173);
 }
 
 .participant-count::before {
   display: block;
-  content: 'Participant No: ';
+  content: 'Participants';
   font-size: 70px;
   color: rgb(173, 173, 173);
 }
@@ -42,7 +42,7 @@
 
 .live-count:before {
   display: block;
-  content: 'Visitor Count: ';
+  content: 'Visitors';
   font-size: 100px;
   color: gray;
   font-weight: 600;

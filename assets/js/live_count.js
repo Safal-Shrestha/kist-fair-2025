@@ -1,40 +1,33 @@
 const visitorElement = document.querySelector('.live-count-number');
 
-function animateVisitorCount(currentCount) {
-    visitorElement.textContent = currentCount;
-    visitorElement.style.animation = 'increaseCount 0.5s ease-out';
-}
-
 let FetchedData, oldFetchedData = {};
 
 const hasChange = (oldFetchedData, FetchedData) => {
-  if (oldFetchedData.length !== FetchedData.length) return true;
+  if (!oldFetchedData || !FetchedData) return true;
 
-  for (let i = 0; i < oldFetchedData.length; i++) {
-    if (oldFetchedData[i].status !== FetchedData[i].status) {
-      return true;
-    }
-  }
-  return false;
-}
+  if (Object.keys(oldFetchedData).length === 0) return true;
+
+  return (
+    oldFetchedData.visitor !== FetchedData.visitor ||
+    oldFetchedData.participant !== FetchedData.participant ||
+    oldFetchedData.project !== FetchedData.project
+  );
+};
 
 let fetchData = async () =>{
-  let f = await fetch('automation-system/backend/liveCountData.php');
-  let FetchedData = await f.json();
+  let f = await fetch('/automation-system/backend/liveCountData.php');
+  FetchedData = await f.json();
+  console.log(FetchedData.participant);
   if(hasChange(FetchedData,oldFetchedData)){
-    // document.querySelector('.live-count-number').innerText = FetchedData.visitor + FetchedData.participant;
-    animateVisitorCount(FetchedData.visitor+FetchedData.participant);
+    document.querySelector('.live-count-number').innerText = FetchedData.visitor;
     document.querySelector('.participant-count').innerText = FetchedData.participant;
     document.querySelector('.stall-count').innerText = FetchedData.project;
+    oldFetchedData = FetchedData;
   }
 }
 
 fetchData();
 
 setInterval(fetchData, 1000);
-
-window.onload = function () {
-  animateVisitorCount();
-}
 
 //visitor, participant, project

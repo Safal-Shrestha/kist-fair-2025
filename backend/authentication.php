@@ -22,7 +22,7 @@
 
     if($count == 1){  
         session_start();
-        $_SESSION['id'] = session_create_id();
+        $_SESSION['id'] = $row['team_id'];
         $_SESSION['username'] = $row['user_name'];
         $_SESSION['role'] = $role;
         header("location: ../index.php");
