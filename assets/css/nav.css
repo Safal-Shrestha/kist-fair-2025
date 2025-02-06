@@ -103,6 +103,9 @@ background-color: var(--color);
 .participant-support #support-pc, .participant-support .support-mobile{
   background-color: var(--color);
 }
+.hidden{
+  display: none;
+}
 @media (max-width: 733px){
   .for-non-mobile{
     display: none;
