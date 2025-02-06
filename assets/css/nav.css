@@ -72,7 +72,7 @@ nav ul{
   justify-content: center;
   position: absolute;
   width: 130px;
-  left: -105px;
+  right: 0px;
   top: 40px;
   border: 1px solid gray;
   border-radius: 5px;
