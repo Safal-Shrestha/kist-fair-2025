@@ -7,7 +7,7 @@ use Google\Service\Sheets;
 
 function shortenString($str)
 {
-    $parts = preg_split('/[:\-]/', $str, 2);
+    $parts = preg_split('/[:\-()]/', $str, 2);
     return isset($parts[0]) ? trim($parts[0]) : '';
 }
 

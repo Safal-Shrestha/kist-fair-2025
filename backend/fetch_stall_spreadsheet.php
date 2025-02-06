@@ -38,17 +38,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             echo "Error: " . $conn->error;
         }
 
-        $fetchTeamSQL = "SELECT * from teams WHERE name = '$teamName'";
-        $teamResult = $conn->query($fetchTeamSQL);
-        $teamRow = mysqli_fetch_array($teamResult);
-        $teamId = $teamRow['team_id'];
+        // $fetchTeamSQL = "SELECT * from teams WHERE name = '$teamName'";
+        // $teamResult = $conn->query($fetchTeamSQL);
+        // $teamRow = mysqli_fetch_array($teamResult);
+        // $teamId = $teamRow['team_id'];
 
-        $linkTeamSQL = "INSERT INTO team_stall (stall_id, team_id)
-                    VALUES ('$stallName', '$teamId')";
+        // $linkTeamSQL = "INSERT INTO team_stall (stall_id, team_id)
+        //             VALUES ('$stallName', '$teamId')";
 
-        if (!$conn->query($linkTeamSQL)) {
-            echo "Error: " . $conn->error;
-        }
+        // if (!$conn->query($linkTeamSQL)) {
+        //     echo "Error: " . $conn->error;
+        // }
     }
 }
 
