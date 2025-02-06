@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <nav>
   <ul>
     <li id="logo">
@@ -11,12 +15,29 @@
         <li>
           <a id="map-pc">Map</a>
         </li>
+        <?php
+          if(isset($_SESSION['id']))
+          {
+            if($_SESSION['role'] == 'participant')
+            {
+        ?>
         <li>
           <a id="support-pc">Support</a>
         </li>
+        <?php
+          }
+          if($_SESSION['role'] == 'volunteer' ||$_SESSION['role'] == 'admin')
+          {
+        ?>
         <li>
           <a id="problem-pc">Problems</a>
         </li>
+        <?php
+          }
+        ?>
+        <?php
+          }
+        ?>
         <li>
           <a id="about-us-pc">About Us</a>
         </li>

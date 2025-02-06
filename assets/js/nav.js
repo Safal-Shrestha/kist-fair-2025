@@ -1,5 +1,5 @@
 let loadNav = async () => {
-  let f = await fetch('../../nav.html');
+  let f = await fetch('/automation-system/nav.php');
   let res = await f.text();
   document.querySelector('#nav-bar').innerHTML = res;
 
@@ -15,34 +15,34 @@ let loadNav = async () => {
   });
 
   document.querySelector('#schedule-pc').addEventListener('click',()=>{
-    window.location.href = '../../index.php';
+    window.location.href = '/automation-system';
   });
   document.querySelector('.schedule-mobile').addEventListener('click',()=>{
-    window.location.href = '../../index.php';
+    window.location.href = '/automation-system';
   });
   document.querySelector('#map-pc').addEventListener('click',()=>{
-    window.location.href = '../../map.html';
+    window.location.href = '/automation-system/map.html';
   });
   document.querySelector('.schedule-mobile').addEventListener('click',()=>{
-    window.location.href = '../../map.html';
+    window.location.href = '/automation-system/map.html';
   });
   document.querySelector('#support-pc').addEventListener('click',()=>{
-    window.location.href = '../../Participants/participant_support.html';
+    window.location.href = '/automation-system/Participants/participant_support.html';
   });
   document.querySelector('.support-mobile').addEventListener('click',()=>{
-    window.location.href = '../../Participants/participant_support.html';
+    window.location.href = '/automation-system/Participants/participant_support.html';
   });
   document.querySelector('#problem-pc').addEventListener('click',()=>{
-    window.location.href = '../../Participants/volunteer_problem.html';
+    window.location.href = '/automation-system/Participants/volunteer_problem.html';
   });
   document.querySelector('.problem-mobile').addEventListener('click',()=>{
-    window.location.href = '../../Participants/volunteer_problem.html';
+    window.location.href = '/automation-system/Participants/volunteer_problem.html';
   });
   document.querySelector('#about-us-pc').addEventListener('click',()=>{
-    window.location.href = '../../about_us.html';
+    window.location.href = '/automation-system/about_us.html';
   });
   document.querySelector('.about-us-mobile').addEventListener('click',()=>{
-    window.location.href = '../../about_us.html';
+    window.location.href = '/automation-system/about_us.html';
   });
 }
 

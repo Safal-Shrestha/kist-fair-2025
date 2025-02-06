@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +19,12 @@
       <div class="note">
         Login Page for Participants & Volunteers
       </div>
+      <?php
+        if(isset($_SESSION["errorMessage"]))
+        {
+          echo ("<div class='invalid'>".$_SESSION["errorMessage"]."</div>");
+        }
+      ?>
       <div>
         <label for="name">Username <span>*</span></label>
         <input type="text" name="name" id="name" placeholder="Enter your username" autocomplete="off" class="input">

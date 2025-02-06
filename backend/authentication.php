@@ -13,8 +13,12 @@
     $sql = "SELECT *from teams where user_name = '$username' and password = '$password'";  
     $result = mysqli_query($conn, $sql);  
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-    $count = mysqli_num_rows($result); 
-    $role = "$row[role]"; 
+    $count = mysqli_num_rows($result);
+    $role = "participant";
+    if($row['user_name']=='part_volunteers')
+    {
+        $role = "volunteer";
+    }
 
     if($count == 1){  
         session_start();
@@ -24,7 +28,7 @@
         header("location: ../index.php");
     }  
     else{ 
-        session_start(); 
+        session_start();
         $_SESSION["errorMessage"] = "Invalid Credentials";
-        header("Location: ../index.php");
+        header("Location: /automation-system/Participants/login_page.php");
     }

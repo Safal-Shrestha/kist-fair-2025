@@ -1,6 +1,4 @@
 <?php
-  include 'backend/connect.php';
-
   session_start();       
 ?>
 
@@ -23,51 +21,7 @@
 </head>
 
 <body class="event-schedule">
-<<<<<<< HEAD
   <div id="nav-bar"></div>
-=======
-<nav>
-    <ul>
-      <li id="logo">
-        KIST FAIR 2025
-      </li>
-      <li class="for-non-mobile">
-        <ul class="inner-list">
-          <li>
-            <a href="index.html" id="schedule-pc">Schedule</a>
-          </li>
-          <li>
-            <a href="map.html" id="map-pc">Map</a>
-          </li>
-          <?php
-             if(isset($_SESSION['id']))
-             {
-          ?>
-          <li>
-            <a href="Participants/participant_support.html" id="support-pc">Support</a>
-          </li>
-          <li>
-            <a href="Participants/volunteer_problem.html" id="problem-pc">Problems</a>
-          </li>
-          <?php
-             }
-          ?>
-        </ul>
-      </li>
-      <li class="for-mobile">
-        <ul class="bar">
-          <i class="fa-solid fa-bars"></i>
-        </ul>
-        <div class="mobile">
-          <a href="index.html" class="schedule-mobile">Schedule</a>
-          <a href="map.html" class="map-mobile">Map</a>
-          <a href="Participants/participant_support.html" class="support-mobile">Support</a>
-          <a href="Participants/volunteer_problem.html" class="problem-mobile">Problems</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
->>>>>>> 763019122d1672af5c453700b2c0b69b25fee547
   <div id="body">
     <div id="schedule-container">
       <div id="schedule-container-title">
@@ -126,10 +80,4 @@
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/getSchedule.js"></script>
 </body>
-<script>
-    function logout()
-    {
-        window.location.href = 'backend/logout.php';
-    }
-</script>
 </html>
