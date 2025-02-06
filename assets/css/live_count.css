@@ -1,0 +1,70 @@
+*{
+  padding: 0;
+  margin: 0;
+  background-color: rgb(20,20,20);
+  color: white;
+}
+
+.main-body {
+  
+}
+
+.stall-and-participant-count-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.stall-count, .participant-count{
+  font-size: 100px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.stall-count::before {
+  display: block;
+  content: 'Stall No: ';
+  font-size: 70px;
+  color: rgb(173, 173, 173);
+}
+
+.participant-count::before {
+  display: block;
+  content: 'Participant No: ';
+  font-size: 40px;
+  color: rgb(173, 173, 173);
+}
+
+.live-count{
+  font-size: 170px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.live-count:before {
+  display: block;
+  content: 'Visitor Count: ';
+  font-size: 100px;
+  color: gray;
+  font-weight: 600;
+}
+
+.live-count-number{
+  display: inline-block;
+  transition: transform 0.5s ease-out;
+}
+
+@keyframes increaseCount {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
