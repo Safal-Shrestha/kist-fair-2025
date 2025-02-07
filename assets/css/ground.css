@@ -129,7 +129,7 @@
   position: absolute;
   left: calc(50vw - 253px);
   width: 500px;
-  height: 400px;
+  height: 200px;
   border: 2px solid white;
   border-radius: 5px;
   z-index: 99;
@@ -211,7 +211,7 @@
   .description-body{
     left: calc(50vw - 180px);
     width: 340px;
-    height: 400px;
+    height: 200px;
   }
   .description-body-title{
     padding-left: 10px;

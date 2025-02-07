@@ -141,7 +141,7 @@ let fetchData = async () => {
                 },
                 body: JSON.stringify({id: data.id})
             });
-            let res = await f.json();
+            let res = await f.text();
             }
             sendData();
           });
