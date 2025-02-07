@@ -97,6 +97,13 @@ let fetchData = async () => {
           div1.appendChild(div2);
         }
 
+        {//for stall number
+          let div2 = document.createElement('div');
+          div2.classList.add('stall-no');
+          div2.innerText = data.stall_id;
+          div1.appendChild(div2);
+        }
+
         {//description button
           let div2 = document.createElement('div');
           div2.classList.add('problem-description');
