@@ -16,7 +16,6 @@ let fetchData = async () => {
   FetchedData = await f.json();
 
   if (hasChange(oldFetchedData, FetchedData)) {
-    console.log("hi");
     document.querySelector('#finished-problem-container-body').innerHTML = '';
     document.querySelector('#problem-container-body').innerHTML = '';
     let ongoingCount = 0, completedCount = 0;
@@ -109,7 +108,7 @@ let fetchData = async () => {
             document.querySelector('.description-body').style.top = `${centerY}px`;
             document.querySelector('#overlay').style.display = 'block';
             document.querySelector('.description-body-title').innerText = data.title;
-            document.querySelector('.stall-no').innerText = data.stall_no;
+            document.querySelector('.stall-no').innerText = data.stall_id;
             document.querySelector('.description-body-description').innerText = data.description;
           });
           document.querySelector('.description-body-cross-button').addEventListener('click', () => {
