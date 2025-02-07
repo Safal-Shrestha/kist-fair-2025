@@ -4,7 +4,7 @@ const hasChange = (oldFetchedData, FetchedData) => {
   if (oldFetchedData.length !== FetchedData.length) return true;
 
   for (let i = 0; i < oldFetchedData.length; i++) {
-    if (oldFetchedData[i].status !== FetchedData[i].status) {
+    if (oldFetchedData[i].is_solved !== FetchedData[i].is_solved) {
       return true;
     }
   }
@@ -16,6 +16,7 @@ let fetchData = async () => {
   FetchedData = await f.json();
 
   if (hasChange(oldFetchedData, FetchedData)) {
+    console.log("hi");
     document.querySelector('#finished-problem-container-body').innerHTML = '';
     document.querySelector('#problem-container-body').innerHTML = '';
     let ongoingCount = 0, completedCount = 0;
@@ -141,7 +142,7 @@ let fetchData = async () => {
           }
           div2.addEventListener('click', () => {
             let sendData = async () => {
-              let f = await fetch('', {   // this is where the php file link goes
+              let f = await fetch('/automation-system/backend/problemSolved.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -151,13 +152,13 @@ let fetchData = async () => {
             let res = await f.text();
             }
             sendData();
+            console.log(data.id);
           });
         }
 
         document.querySelector('#problem-container-body').appendChild(div1);
       }
 
-      //for checking status of the schedule
       let status = document.querySelectorAll('.problem-status');
       status.forEach((s, i) => {
         let scheduleElement = document.querySelector(`.problem${i + 1}`);
