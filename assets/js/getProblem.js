@@ -98,13 +98,6 @@ let fetchData = async () => {
           div1.appendChild(div2);
         }
 
-        {//for stall number
-          let div2 = document.createElement('div');
-          div2.classList.add('stall-no');
-          div2.innerText = data.stall_id;
-          div1.appendChild(div2);
-        }
-
         {//description button
           let div2 = document.createElement('div');
           div2.classList.add('problem-description');
@@ -116,6 +109,7 @@ let fetchData = async () => {
             document.querySelector('.description-body').style.top = `${centerY}px`;
             document.querySelector('#overlay').style.display = 'block';
             document.querySelector('.description-body-title').innerText = data.title;
+            document.querySelector('.stall-no').innerText = data.stall_no;
             document.querySelector('.description-body-description').innerText = data.description;
           });
           document.querySelector('.description-body-cross-button').addEventListener('click', () => {
